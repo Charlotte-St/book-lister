@@ -23,10 +23,14 @@ Book.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        author: {
+        first_name: {
             type: DataTypes.STRING,
             allowNull: false
-        }, 
+        },
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         pages: {
             type: DataTypes.INTEGER, 
             allowNull: false
@@ -34,6 +38,14 @@ Book.init(
         year: {
             type: DataTypes.INTEGER,
             allowNull: false
+        }, 
+        genre: {
+            type: DataTypes.STRING, 
+            allowNull: true
+        }, 
+        desc: {
+            type: DataTypes.STRING, 
+            allowNull: true
         }
     },
     {
