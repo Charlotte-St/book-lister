@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const {List} = require('../../models');
+//const withAuth = require('../utils/auth');
+
 
 //Get route for fetching all lists
 
@@ -11,11 +13,13 @@ router.get('/', (req, res) => {
 
 //Post route for adding lists
 
-router.post('/', async (req, res) => {
+router.post('/', /*withAuth,*/ async (req, res) => {
     try {
         const list = await List.create({
-            ...req.body
-        });
+            ...req.body,
+            user_id: req.session.user_id,
+          }
+        );
         req.status(200).json(list)
     } catch (err) {
         res.status(400).json(err);
