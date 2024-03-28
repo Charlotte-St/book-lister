@@ -20,7 +20,7 @@ ListItem.init(
             allowNull: true
         },
         user_id: {
-            type: DataType.INTEGER, 
+            type: DataTypes.INTEGER, 
             allowNull: false, 
             references: {
                 model: 'user',
