@@ -1,7 +1,8 @@
 const Book = require('./Book');
 const User = require('./User');
 const List = require('./List');
-const ListItem = require ('./ListItem');
+
+const ListItem = require('./ListItem');
 
 User.hasMany(List, {
     foreignKey: 'user_id'
@@ -16,6 +17,4 @@ Book.belongsToMany(List, {
 List.belongsToMany(Book, {
     through: 'ListItem'
 });
-
-
 module.exports = {Book, User, List, ListItem};
