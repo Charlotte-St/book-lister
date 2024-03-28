@@ -1,0 +1,11 @@
+.card-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits text color from parent elements */
+    display: block; /* Ensures the link takes up the full card space */
+    margin-bottom: 10px; /* Optional: adds space between cards */
+  }
+  
+  .card-link:hover, .card-link:focus {
+    text-decoration: none; /* Removes underline from links on hover/focus */
+  }
+  
