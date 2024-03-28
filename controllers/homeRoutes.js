@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {User, List, Book, ListItem} = require('../models');
-/* const withAuth = require('../utils/auth');*/
+const withAuth = require('../utils/auth');
 
 //homepage
 
@@ -23,7 +23,7 @@ router.get('/login', (req, res) => {
 
 //profile page
 
-router.get('/profile', /*withAuth, */ async (req, res) => {
+router.get('/profile', withAuth,  async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: {exclude: ['password']},
@@ -35,7 +35,7 @@ router.get('/profile', /*withAuth, */ async (req, res) => {
         
         res.render('profile', {
             ...user,
-            //logged_in: true
+            logged_in: true
         });
 
     } catch (err) {
@@ -45,7 +45,7 @@ router.get('/profile', /*withAuth, */ async (req, res) => {
 
 //list page
 
-router.get('/list/:id', /*withAuth,*/ async(req, res) => {
+router.get('/list/:id', withAuth, async(req, res) => {
    try{
     const listData = await List.findByPk(req.params.id, {
         include: [
@@ -57,7 +57,7 @@ router.get('/list/:id', /*withAuth,*/ async(req, res) => {
 
     res.render('list', {
         ...list, 
-        //logged_in: req.session.logged_in
+        logged_in: req.session.logged_in
     })
 } catch (err){
     res.status(500).json(err);
@@ -66,10 +66,10 @@ router.get('/list/:id', /*withAuth,*/ async(req, res) => {
 
 
 //new list page
-router.get('/newlist', /*withAuth,*/ async (req, res) => {
+router.get('/newlist', withAuth, async (req, res) => {
     try {
         res.render('newlist', {
-            //logged_in: true
+            logged_in: true
         })
     }catch (err){
         res.status(500).json(err);
@@ -78,7 +78,7 @@ router.get('/newlist', /*withAuth,*/ async (req, res) => {
 
 
 //book data page
-router.get('/book/:id', /*withAuth,*/ async(req, res) => {
+router.get('/book/:id', withAuth, async(req, res) => {
     try{
      const bookData = await Book.findByPk(req.params.id);
  
@@ -86,7 +86,7 @@ router.get('/book/:id', /*withAuth,*/ async(req, res) => {
  
      res.render('book', {
          ...book, 
-         //logged_in: req.session.logged_in
+         logged_in: req.session.logged_in
      })
  } catch (err){
      res.status(500).json(err);
