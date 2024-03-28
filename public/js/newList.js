@@ -38,7 +38,8 @@ console.log(list_desc);
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to create a list');
+        //alert('Failed to create a list');
+        document.location.replace('/profile')
       }
     }
 };
