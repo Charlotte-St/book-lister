@@ -43,7 +43,7 @@ Book.init(
             type: DataTypes.STRING, 
             allowNull: true
         }, 
-        desc: {
+        descr: {
             type: DataTypes.STRING, 
             allowNull: true
         }
@@ -53,7 +53,7 @@ Book.init(
         timestamps: false, 
         freezeTableName: true, 
         underscored: true,
-        modelName: 'books'
+        modelName: 'book'
     }
 )
 module.exports = Book;
