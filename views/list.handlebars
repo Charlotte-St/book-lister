@@ -9,6 +9,12 @@
             </div>
         </div>
     </div>
+
+    <div type="row">
+        <div type="card">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#book-add-modal">Add a book</button>
+        </div>
+    </div>
 <div class="row">
     <div class="col-sm-2">
         {{#each books as |book|}}
@@ -26,3 +32,27 @@
     </div>
 </div>
 </div>
+
+
+<!--Add book modal-->
+<div class="modal fade" id="book-add-modal" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Add a book
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div class="modal-body">
+            <div>
+                <form id="book-search">
+                    <label>Search for a book</label>
+                    <input type="text"><button type="button" class="btn btn-primary">Submit</button>
+                </form>
+                <div id="book-search-result">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/bookSearch.js"></script>
