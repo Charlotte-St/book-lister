@@ -1,5 +1,11 @@
 {{#each lists as |list|}}
-    <a href="/list/{{list.id}}">{{list.title}}</a> </br>
+  <a href="/list/{{list.id}}" class="card-link">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{list.title}}</h5>
+        <p class="card-text">{{list.list_desc}}</p>
+      </div>
+    </div>
+  </a>
+  <br/> <!-- Line break for spacing between cards -->
 {{/each}}
-
-Test data
