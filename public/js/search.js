@@ -1,16 +1,8 @@
-//import Fuse from 'fuse.js';
-const fuse = require('fuse.js');
-import books from '../db/example.json';
+console.log('loaded');
 
-const fuseEx = new Fuse(books,{
-    keys: [
-        'title',
-        'first_name',
-        'last_name',
-        'genre'
-    ]
-});
+const searchHandler = async (event) => {
+    event.preventDefault();
+    console.log('Search')
+};
 
-const results = fuse.search('Gabriel')
-
-console.log(results);
+document.querySelector('.book-search').addEventListener('submit', searchHandler);
