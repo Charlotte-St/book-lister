@@ -6,7 +6,10 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async(req, res) => {
     try {
-        res.render('homepage')
+        res.render('homepage', {
+            logged_in: req.session.logged_in
+        }
+        )
     } catch {
         res.status(500).json(err)
     }
@@ -45,7 +48,9 @@ router.get('/profile', /*withAuth,*/  async (req, res) => {
 
 router.get('/list/:id', withAuth, async(req, res) => {
    try{
-    const listData = await List.findByPk(req.params.id);
+    const listData = await List.findByPk(req.params.id, {
+        include: [{model: Book, through: ListItem}]
+    });
 
     const list = listData.get({plain: true});
 

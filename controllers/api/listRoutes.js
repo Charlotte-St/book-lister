@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {List} = require('../../models');
+const {List, ListItem, Book} = require('../../models');
 //const withAuth = require('../utils/auth');
 
 
@@ -31,7 +31,9 @@ router.post('/', /*withAuth,*/ async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-      const listData = await List.findByPk(req.params.id);
+      const listData = await List.findByPk(req.params.id, {
+        include: [{model: Book, through: ListItem}]
+      });
   
       if (!listData) {
         res.status(404).json({ message: 'No list found with that id.' });

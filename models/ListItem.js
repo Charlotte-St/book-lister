@@ -11,20 +11,22 @@ ListItem.init(
             primaryKey: true,
             autoIncrement: true,
         }, 
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false
+        list_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'list',
+                foreign_key: 'id',
+                unique: false
+            }
         },
-        list_desc: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        user_id: {
+        book_id: {
             type: DataTypes.INTEGER, 
             allowNull: false, 
             references: {
-                model: 'user',
-                foreign_key: 'id'
+                model: 'book',
+                foreign_key: 'id',
+                unique: false
             }
         }
     },
@@ -35,5 +37,6 @@ ListItem.init(
         underscored: true,
         modelName: 'listitem'
     }
-)
+);
+
 module.exports = ListItem;
