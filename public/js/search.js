@@ -8,22 +8,13 @@ const searchHandler = async (event) => {
     
     console.log(searchVal);
 
-    const response = await fetch('/api/book', {
+    /*const response = await*/ fetch('/api/book', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         plain: true
         }
-    });
-    console.log('Search');
-    if (response.ok) {
-        const arr = response.json();
-        console.log(arr);
-        console.log(arr[0]);
-      } else {
-        alert('no Books found');
-        console.log('issue')
-      }
+    }).then((response) => response.json()).then((data) => {console.log(data)});
 };
 
 document.querySelector('.book-search').addEventListener('submit', searchHandler);
