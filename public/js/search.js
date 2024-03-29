@@ -17,7 +17,9 @@ const printResults = (resultData) => {
     const resultOptEl = document.createElement('div');
     resultOptEl.classList.add('card');
 
-    resultOptEl.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+    resultOptEl.innerHTML = '<button class="btn add-book" user_id=""><i class="fa-solid fa-plus"></i></button>';
+
+    console.log(document.cookie);
 
     resultCardEl.append(resultEl);
     cardGroupEl.append(resultCardEl);
