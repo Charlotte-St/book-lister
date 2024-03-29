@@ -1,34 +1,36 @@
-const bookSearchFormEl = document.querySelector('#book-search');
+//const bookSearchFormEl = document.querySelector('#book-search');
 const bookSearchResultEl = document.querySelector('#book-search-result');
 
+console.log('Loaded');
+
 const handleSearchFormSubmit = async (event) => {
-    event.preventDefault();
-
+    /*event.preventDefault();*/
+    console.log('searching');
     const searchVal = document.querySelector('#search-input').value.trim();
-
-    if (!searchVal) {
+    
+    console.log(searchVal);
+    
+    /*if (!searchVal) {
         console.error('Please enter a search value');
         return;
-    }
+    }*/
 
-    if (searchVal){
-        const response = await fetch('api/book', {
+      /*  const response = await fetch('/api/book', {
             method: 'GET',
             body: JSON.stringify({title, first_name, last_name}),
             headers: {
                 'Content-Type': 'application/json',
             }
-        }).then(function(response){ console.log(response.json())});
-
+        });
+        console.log('Search');
         if (response.ok) {
-            const resultCard = document.createElement('div');
-            Results
+            console.log(response);
           } else {
             alert('no Books found');
-            //document.location.replace('/profile')
-          }
-    }
+            console.log('issue')
+          }*/
 
 }
 
-bookSearchFormEl.addEventListener('submit', handleSearchFormSubmit);
+document.getElementById('search-button').addEventListener('submit', handleSearchFormSubmit);
+//document.querySelector('.book-search').addEventListener('submit', handleSearchFormSubmit);
