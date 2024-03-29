@@ -79,7 +79,9 @@ router.get('/newlist', withAuth, async (req, res) => {
 //book data page
 router.get('/book/:id', withAuth, async(req, res) => {
     try{
-     const bookData = await Book.findByPk(req.params.id);
+     const bookData = await Book.findByPk(req.params.id, {
+        include: [{model: List, through: ListItem}]
+     });
  
      const book = bookData.get({plain: true});
  
