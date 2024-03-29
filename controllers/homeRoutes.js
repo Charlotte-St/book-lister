@@ -25,10 +25,10 @@ router.get('/login', (req, res) => {
 
 router.get('/profile', withAuth,  async (req, res) => {
     try {
-        const userData = await User.findByPk(req.session.user_id, {
+        const userData = await User.findByPk(req.session.user_id, /*{
             attributes: {exclude: ['password']},
             include: [{List}],
-        });
+        }*/);
 
         const user = userData.get({plain: true});
 

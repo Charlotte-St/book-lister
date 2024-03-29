@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-/*router.post('/', async (req, res) => {
+
+
+//add a new user 
+router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -11,14 +14,11 @@ const { User } = require('../../models');
 
       res.status(200).json(userData);
     });
-    res.status(200).json(userData);
   } catch (err) {
     res.status(400).json(err);
+    console.log(err);
   }
-});*/
-
-
-
+});
 
 
 
