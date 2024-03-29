@@ -12,6 +12,7 @@ List.belongsTo(User);
 Book.belongsToMany(List, {
     through: {
         model: ListItem,
+        foreignKey: 'list_id',
         unique: false
     }
 });
@@ -19,6 +20,7 @@ Book.belongsToMany(List, {
 List.belongsToMany(Book, {
     through: {
         model: ListItem, 
+        foreignKey: 'book_id',
         unique: false
     }
 });
