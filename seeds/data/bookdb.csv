@@ -1,3 +1,8 @@
-OLID,OCLC,Title,Author,Pages,Year
-OL24373231M,560251531,The Sound and The Fury,William Faulkner,427,1956
-OL25954563M,123113448,Love in the Time of Cholera,Gabriel Garcia Marquez,423,1985
+OLID,OCLC,Title,Author,Pages,Year,Genre,Desc
+OL24373231M,560251531,The Sound and The Fury,William Faulkner,427,1956,Fiction,"The story concerns various members of a Southern family, once wealthy landowners but now struggling to maintain their reputation."
+OL25954563M,123113448,Love in the Time of Cholera,Gabriel Garcia Marquez,423,1985,Fiction,"Set on the Caribbean coast of South America, this love story brings together Fermina Daza, her distinguished husband, and a man who has secretly loved her for more than fifty years."
+OL31664856M,1152056839,Home Body,Rupi Kaur,188,2020,Poetry,"Home body is a collection of raw, honest conversations with oneself - reminding readers to fill up on love, acceptance, community, family, and embrace change."
+OL24244505M,38994823,Killing Floor,Lee Child,419,1997,Mystery Fiction,"Jack Reacher, an ex-military policeman, is passing through the town of Margarve, Georgia, when he is accused of murder, and must somehow find the real killer and prove his innocence--with virtually the whole town against him."
+OL32739720M,1273680237,The Last Rose of Shanghai,Weina Dai Randel,412,2021,Historical Fiction,"As the war escalates, Aiyi and Ernest find themselves torn apart, and their choices between love and survival grow more desperate."
+OL25431390M,822028608,Steelheart,Brandon Sanderson,386,2013,Young Adult Fiction,"At age eight, David watched as his father was killed by an Epic, a human with superhuman powers, and now, ten years later, he joins the Reckoners--the only people who are trying to kill the Epics and end their tyranny."
+OL26855580M,939706285,Scythe,Neal Shusterman,433,2016,Young Adult Fiction,"Citra and Rowan are teenagers who have been selected to be scythe's apprentices, and despite wanting nothing to do with the vocation they must learn the art of killing and come to understand the necessity of what they do."
