@@ -2,15 +2,30 @@
     <div type="row">
         <div type="card">
             <div type="card-header">
-                {{title}}
+                <h3>{{title}}</h3>
             </div>
             <div type="card-body">
                 {{list_desc}}
             </div>
         </div>
     </div>
-{{!--{{#each list.listitem.books}}
-example text
-{{list.listitem.books.title}}
-{{/each}}--}}
+<div class="row">
+    <div class="col-sm-2">
+        {{#each books as |book|}}
+            <a href="/book/{{id}}">
+                <div class="card">
+                <img class="card-img" src="https://covers.openlibrary.org/b/olid/{{book.olid}}-M.jpg" alt="{{book.title}} cover">
+                <div class="card-body">
+                    <div class="card-title">
+                        {{book.title}}
+                    </div>
+                </div>
+                </div>
+            </a>
+
+{{/each}}
+    </div>
+
+</div>
+
 </div>

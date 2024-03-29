@@ -9,21 +9,35 @@
                 by {{first_name}} {{last_name}}
             </p>
             <p>
-                Pages: {{pages}}
+                <b><i>Pages:</i></b> {{pages}}
             </p>
             <p>
-                Year Published: {{year}}
+                <b><i>Year Published:</i></b> {{year}}
             </p>
             <p>
-                Genre: {{genre}}
+                <b><i>Genre:</i></b> {{genre}}
             </p>
             <p>
-                <a href="https://search.worldcat.org/title/{{oclc}}">Find this book on WorldCat</a>
+                <a href="https://search.worldcat.org/title/{{oclc}}" target="new">Find this book on WorldCat</a>
             </p>
             <p>
-                <blockquote>Description: {{descr}}</blockquote>
+                <blockquote><b><i>Description</i></b> {{descr}}</blockquote>
                
             </p>
         </div>
     </div>
+</div>
+
+<div class="card flex-row">
+    <div class="row">Lists with this book: </br></div>
+
+
+{{#each lists as |list|}}
+<div class="card flex-row">
+    <img class="card-img" src="https://covers.openlibrary.org/b/olid/{{list.book.olid}}-S.jpg">
+    <div class="card-body">
+        <a href="/list/{{list.id}}">{{list.title}}</a>
+    </div>
+</div>
+{{/each}}
 </div>
