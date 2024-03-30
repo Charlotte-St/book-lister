@@ -20,8 +20,6 @@ const printResults = (resultData) => {
     resultOptEl.classList.add('card');
 
     resultOptEl.innerHTML = `<button class="btn add-book btn-primary" id="add-button" book_id="${resultData.id}">Add</button>`;
-
-
     
     resultCardEl.append(resultEl);
     cardGroupEl.append(resultCardEl);
@@ -31,11 +29,9 @@ const printResults = (resultData) => {
 
 const searchHandler = async (event) => {
     event.preventDefault();
-    //console.log('Search')
 
     const searchVal = document.querySelector('#search-input').value.trim();
     
-    //console.log(searchVal);
 
      fetch('/api/book/', {
         method: 'GET',
@@ -45,7 +41,6 @@ const searchHandler = async (event) => {
         }
     }).then((response) => response.json()).then(
         (data) => {resultData = data;
-             //console.log(resultData[0].title);
                 for ( i = 0; i < resultData.length; i++){
                     bookSearchResultEl.textContent= '';
                     if (resultData[i].title.includes(searchVal)){
