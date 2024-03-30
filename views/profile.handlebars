@@ -1,11 +1,24 @@
-{{#each lists as |list|}}
-  <a href="/list/{{list.id}}" class="card-link">
-    <div class="card" style="width: 18rem;">
+<h3>Your Lists</h3>
+</br>
+
+<div class="container">
+
+  <div class="row flex-row">
+    {{#each lists as |list|}}
+    <div class="col-sm-6">
+    <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{list.title}}</h5>
-        <p class="card-text">{{list.list_desc}}</p>
+          <a href="/list/{{list.id}}" class="card-link">
+            <h5 class="card-title">{{list.title}}</h5>
+            <p class="card-text">{{list.list_desc}}</p>
+            </a>
       </div>
     </div>
-  </a>
-  <br/> <!-- Line break for spacing between cards -->
+    </div>
 {{/each}}
+
+    </div>
+  </div>
+</div>
+
+</div>
