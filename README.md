@@ -4,6 +4,8 @@
 
 Font Awesome
 
+[CSV Parse for node.js](https://csv.js.org/)
+
 ### Tutorials 
 
 [CSV Parsing Tutorial](https://www.youtube.com/watch?v=9_x-UIVlxgo)
