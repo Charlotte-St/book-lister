@@ -1,3 +1,5 @@
+console.log('Add book running')
+
 const addBookHandler = async (event) => {
     event.preventDefault();
 
