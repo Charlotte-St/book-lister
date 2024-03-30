@@ -24,7 +24,7 @@
         {{#each books as |book|}}
             <a href="/book/{{id}}">
                 <div class="card">
-                    <img class="card-img" src="https://covers.openlibrary.org/b/olid/{{book.olid}}-M.jpg" alt="{{book.title}} cover">
+                    <img class="card-img object-fit-cover" src="https://covers.openlibrary.org/b/olid/{{book.olid}}-M.jpg" alt="{{book.title}} cover">
                     <div class="card-body">
                         <div class="card-title">
                             {{book.title}}
