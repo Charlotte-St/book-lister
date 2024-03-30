@@ -94,4 +94,21 @@ router.get('/book/:id', withAuth, async(req, res) => {
  }
  });
 
+//Edit list page
+
+router.get('/edit/:id', withAuth, async (req, res) => {
+    try{
+        const listData = await List.findByPk(req.params.id);
+
+        const list = listData.get({plain: true});
+
+        res.render('edit', {
+            list,
+            logged_in: req.session.logged_in
+        })
+    } catch (err){
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
