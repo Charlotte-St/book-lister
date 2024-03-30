@@ -1,16 +1,41 @@
-        <h1>Welcome to My Website!</h1>
-        <p>This is a simple homepage template using Handlebars and Bootstrap.</p>
-        
-        {{#if messages}}
-        <div>
-            <h2>Messages</h2>
-            <ul>
-                {{#each messages}}
-                    <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        </div>
-        {{else}}
-        <p>No new messages.</p>
+        <h1 class="display-1 text-center">Book Lister</h1>
 
-        {{/if}}
+        <div class="row">
+            <div class="card text-center border-0">
+                </br>
+                <h5 class="display-5 text-center">Join a community of book lovers to build lists of books. </h3>
+            </div>
+
+        </div>
+        <div class="row">
+
+<div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go to list</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go to list</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go to list</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./js/randomList.js"></script>

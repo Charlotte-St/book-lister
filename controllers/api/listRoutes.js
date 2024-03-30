@@ -17,7 +17,7 @@ router.post('/', /*withAuth,*/ async (req, res) => {
     try {
         const list = await List.create({
             ...req.body,
-            user_id: req.session.user_id,
+            userId: req.session.user_id,
             userID: req.session.user_id
           }
         );
