@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
         const book = await Book.create({
             ...req.body
         });
-        req.status(200).json(book)
+        res.status(200).json(book)
     } catch (err) {
         res.status(400).json(err);
     }

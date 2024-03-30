@@ -18,7 +18,7 @@ router.post('/', /*withAuth,*/ async (req, res) => {
             //user_id: req.session.user_id,
           }
         );
-        req.status(200).json(listItem)
+        res.status(200).json(listItem)
     } catch (err) {
         res.status(400).json(err);
     }
