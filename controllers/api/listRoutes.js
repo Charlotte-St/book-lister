@@ -21,7 +21,7 @@ router.post('/', /*withAuth,*/ async (req, res) => {
             userID: req.session.user_id
           }
         );
-        req.status(200).json(list)
+        res.status(200).json(list)
     } catch (err) {
         res.status(400).json(err);
     }
@@ -39,7 +39,7 @@ router.put('/edit/:id', /*withAuth,*/ async (req, res) => {
             user_id: req.session.user_id
           }}
       );
-      req.status(200).json(list)
+      res.status(200).json(list)
   } catch (err) {
       res.status(400).json(err);
   }
