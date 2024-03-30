@@ -1,8 +1,6 @@
-console.log('Delete list running')
 const delListHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
-        console.log('deleting');
       const response = await fetch(`/api/list/${id}`, {
         method: 'DELETE',
       });
