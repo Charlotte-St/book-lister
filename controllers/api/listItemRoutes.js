@@ -26,4 +26,23 @@ router.post('/', /*withAuth,*/ async (req, res) => {
 
 //Delete list itmes
 
+router.delete('/:id', /*withAuth,*/ async (req, res) => {
+    try {
+      const listItemData = await ListItem.destroy({
+        where: {
+          id: req.params.id
+        },
+      });
+  
+      if (!listItemData) {
+        res.status(404).json({ message: 'Unable to remove this book.' });
+        return;
+      }
+  
+      res.status(200).json(listItemData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 module.exports = router;

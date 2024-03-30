@@ -30,8 +30,12 @@
                             {{book.title}}
                         </div>
                     </div>
+                    </a>
+                        <div class="card-footer">
+                            <button class="btn btn-primary del-book" data-id="{{listitems.id}}">Delete</button>
+                        </div>
                 </div>
-            </a>
+            
         {{/each}}
     </div>
 </div>
@@ -62,3 +66,4 @@
 <script src="../js/search.js"></script>
 <script src="../js/addBook.js"></script>
 <script src="../js/deleteList.js"></script>
+<script src="../js/deleteBook.js"></script>
