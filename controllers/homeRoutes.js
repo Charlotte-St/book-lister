@@ -96,7 +96,7 @@ router.get('/book/:id', withAuth, async(req, res) => {
 
 //Edit list page
 
-router.get('/edit/:id', withAuth, async (req, res) => {
+router.get('/edit/:id',/*withAuth,*/ async (req, res) => {
     try{
         const listData = await List.findByPk(req.params.id);
 
