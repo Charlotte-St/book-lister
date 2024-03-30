@@ -1,32 +1,29 @@
-<div class="card flex-row">
-    <img class="card-img-left col-sm-2" src="https://covers.openlibrary.org/b/olid/{{olid}}-M.jpg">
-    <div class="card-body">
-        <div class="card-header">
-            <h4>{{title}}</h4>
-        </div>
-        <div class="card text">
-            <p>
-                by {{first_name}} {{last_name}}
-            </p>
-            <p>
-                <b><i>Pages:</i></b> {{pages}}
-            </p>
-            <p>
-                <b><i>Year Published:</i></b> {{year}}
-            </p>
-            <p>
-                <b><i>Genre:</i></b> {{genre}}
-            </p>
-            <p>
-                <a href="https://search.worldcat.org/title/{{oclc}}" target="new">Find this book on WorldCat</a>
-            </p>
-            <p>
-                <blockquote><b><i>Description</i></b> {{descr}}</blockquote>
-               
-            </p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card flex-row">
+                <img class="card-img-left" src="https://covers.openlibrary.org/b/olid/{{olid}}-M.jpg">
+                <div class="card-body">
+                    <div class="d-flex flex-column">
+                    <div class="card-header">
+                        <h4 class="flex-wrap">{{title}}</h4>
+                    </div>
+                    <div class="card text">
+                        <p class="p-2">by {{first_name}} {{last_name}}</p>
+                        <p><b><i>Pages:</i></b> {{pages}}</p>
+                        <p><b><i>Year Published:</i></b> {{year}}</p>
+                        <p><b><i>Genre:</i></b> {{genre}}</p>
+                        <p><a href="https://search.worldcat.org/title/{{oclc}}" target="new">Find this book on WorldCat</a></p>
+                        <p><blockquote><b><i>Description</i></b> {{descr}}</blockquote></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
 
 <div class="card flex-row">
     <div class="card-header">Lists with this book: </br></div>
@@ -34,7 +31,7 @@
 
 {{#each lists as |list|}}
 <div class="card flex-row">
-    <img class="card-img" src="https://covers.openlibrary.org/b/olid/{{list.book.olid}}-S.jpg">
+    <img class="card-img object-fit-cover" src="https://covers.openlibrary.org/b/olid/{{list.book.olid}}-S.jpg">
     <div class="card-body">
         <a href="/list/{{list.id}}">{{list.title}}</a>
     </div>
