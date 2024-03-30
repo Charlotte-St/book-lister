@@ -2,12 +2,12 @@ const newListFormHandler = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#list-title').value.trim();
-    const list_desc = document.querySelector('#list-descr').value.trim();
+    const listDesc = document.querySelector('#list-descr').value.trim();
   
-    if (title && list_desc) {
+    if (title && listDesc) {
       const response = await fetch('/api/list', {
         method: 'POST',
-        body: JSON.stringify({ title, list_desc }),
+        body: JSON.stringify({ title, listDesc }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -17,7 +17,6 @@ const newListFormHandler = async (event) => {
         document.location.replace('/profile');
       } else {
         alert('Failed to create a list');
-        //document.location.replace('/profile')
       }
     }
 };

@@ -1,10 +1,11 @@
-# project-2
+# Book Lister
+
 
 ## Resources
 
 Font Awesome
 
-[CSV Parse for node.js](https://csv.js.org/)
+[fast-csv](https://www.npmjs.com/package/fast-csv)
 
 ### Tutorials 
 
