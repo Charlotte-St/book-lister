@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const csvData = [];
 
-fs.createReadStream('seeds/data/bookdb.csv')
+fs.createReadStream('seeds/data/correctedDB-DO-NOT-DELETE.csv')
     .pipe(
         parse({
             delimiter: ','
