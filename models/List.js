@@ -15,11 +15,11 @@ List.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        list_desc: {
+        listDesc: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        user_id: {
+        userId: {
             type: DataTypes.INTEGER, 
             references: {
                 model: 'user',

@@ -11,7 +11,7 @@ ListItem.init(
             primaryKey: true,
             autoIncrement: true,
         }, 
-        list_id: {
+        listId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -20,7 +20,7 @@ ListItem.init(
                 unique: false
             }
         },
-        book_id: {
+        bookId: {
             type: DataTypes.INTEGER, 
             allowNull: false, 
             references: {

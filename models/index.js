@@ -4,7 +4,7 @@ const List = require('./List');
 const ListItem = require('./ListItem');
 
 User.hasMany(List, {
-    foreignKey: 'user_id'
+    foreignKey: 'userId'
 });
 
 List.belongsTo(User);
@@ -12,7 +12,7 @@ List.belongsTo(User);
 Book.belongsToMany(List, {
     through: {
         model: ListItem,
-        foreignKey: 'list_id',
+        foreignKey: 'listId',
         unique: false
     }
 });
@@ -20,7 +20,7 @@ Book.belongsToMany(List, {
 List.belongsToMany(Book, {
     through: {
         model: ListItem, 
-        foreignKey: 'book_id',
+        foreignKey: 'bookId',
         unique: false
     }
 });
