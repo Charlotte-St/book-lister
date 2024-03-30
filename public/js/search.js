@@ -1,4 +1,6 @@
 const bookSearchResultEl = document.querySelector('#book-search-result');
+const mainContentEl = document.querySelector('#main-content');
+
 var resultData;
 console.log('loaded');
 
@@ -17,10 +19,10 @@ const printResults = (resultData) => {
     const resultOptEl = document.createElement('div');
     resultOptEl.classList.add('card');
 
-    resultOptEl.innerHTML = '<button class="btn add-book" user_id=""><i class="fa-solid fa-plus"></i></button>';
+    resultOptEl.innerHTML = `<button class="btn add-book btn-primary" id="add-button" book_id="${resultData.id}">Add</button>`;
 
-    console.log(document.cookie);
 
+    
     resultCardEl.append(resultEl);
     cardGroupEl.append(resultCardEl);
     cardGroupEl.append(resultOptEl);
@@ -29,11 +31,11 @@ const printResults = (resultData) => {
 
 const searchHandler = async (event) => {
     event.preventDefault();
-    console.log('Search')
+    //console.log('Search')
 
     const searchVal = document.querySelector('#search-input').value.trim();
     
-    console.log(searchVal);
+    //console.log(searchVal);
 
      fetch('/api/book/', {
         method: 'GET',
@@ -43,17 +45,14 @@ const searchHandler = async (event) => {
         }
     }).then((response) => response.json()).then(
         (data) => {resultData = data;
-             console.log(resultData[0].title);
+             //console.log(resultData[0].title);
                 for ( i = 0; i < resultData.length; i++){
                     bookSearchResultEl.textContent= '';
                     if (resultData[i].title.includes(searchVal)){
                         printResults(resultData[i]);
                     }
                 }
-                });/*.then(
-            (result) => {
-                console.log(result)
-    })*/;
+                });
 };
 
 

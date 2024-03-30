@@ -1,13 +1,18 @@
 const addBookHandler = async (event) => {
     event.preventDefault();
 
-    const book_id = document.querySelector('book-id').value;
-    const user_id = document.querySelector('user-id').value;
+    console.log('Adding');
+
+    const book_id = document.getElementById('add-button').getAttribute('book-id');
+    const list_id = window.location.toString().split('/')[window.location.toString().split('/').length-1];
   
-    if (book_id && user_id) {
+    console.log(book_id);
+    console.log(list_id);
+
+    if (book_id && list_id) {
       const response = await fetch('/api/listitem', {
         method: 'POST',
-        body: JSON.stringify({ book_id, user_id }),
+        body: JSON.stringify({ book_id, list_id }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -22,4 +27,4 @@ const addBookHandler = async (event) => {
 };
 
 
-document.querySelector('.add-book').addEventListener('click', addBookHandler);
+document.querySelector('#add-button').addEventListener('click', addBookHandler);
