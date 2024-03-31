@@ -50,7 +50,13 @@ const searchHandler = async (event) => {
                         const resultEl = document.createElement('div');
                         resultEl.classList.add('card-body')
                         console.log(resultData[i].id);
-                        resultEl.innerHTML = `<a href="/book/${resultData[i].id}" target="new"><em>${resultData[i].title}</em> by ${resultData[i].firstName} ${resultData[i].lastName}</a>`
+                        resultEl.innerHTML = ` <div class="card">
+                        <div class="card-body">
+                        <a href="/book/${resultData[i].id}" target="new">
+                        <em>${resultData[i].title}</em> by ${resultData[i].firstName} ${resultData[i].lastName}</a>
+                        <button class="btn btn-primary">Add to list</button>
+                        </div>
+                        </div>`
                         mainContentEl.append(resultEl);
                     }
                 }
