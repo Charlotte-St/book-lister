@@ -4,8 +4,11 @@ const scriptEl = document.querySelector('#script-div');
 
 var resultData;
 
+
 console.log('Add book running')
 
+
+//Add book to list
 const addBookHandler = async () => {
 
     console.log('Adding');
