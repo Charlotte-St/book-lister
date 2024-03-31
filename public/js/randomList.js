@@ -16,6 +16,7 @@ const getListLength = async () => {
             for (var i = 0; i < 3; i++){
             var num = Math.floor(Math.random() * resultData.length);
             console.log(num);
+            console.log(data[num].title);
                 printCards(data[num])
 
             }
@@ -34,6 +35,8 @@ function printCards(val) {
         <a href="/list/${val.id}" class="btn btn-primary">Go to list</a>
       </div>
     </div>`
+
+    randomListEl.append(randomCardEl);
 };
 
 getListLength();
