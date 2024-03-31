@@ -35,14 +35,14 @@ const fuzzyHandler = async (event) => {
     title: 'Love in the Time of Cholera',
     first_name: 'Gabriel',
     last_name: 'Garcia Marquez'
-}];
+}, {id: 1, title: 'The Sound and the Fury', first_name: 'William', last_name: 'Faulkner'}];
 
 const results = fuzzysort.go(searchVal, books, {key: 'title'});
 
 console.log(results);
 
                 for ( i = 0; i < results.length; i++){
-                    if (results[i]){
+                    if (results.id = resultData[i]){
                         const resultEl = document.createElement('div');                        
                         resultEl.classList.add('card')
                         
@@ -55,11 +55,11 @@ console.log(results);
                         addButtonEl.classList.add('btn', 'btn-primary');
                         addButtonEl.setAttribute('id', 'add-button');
                         addButtonEl.textContent = 'Add book';
-                        addButtonEl.setAttribute('value', `${results[i].id}`);
+                        addButtonEl.setAttribute('value', `${resultData.id}`);
                         addButtonEl.addEventListener('click', addBookHandler);
 
-                        resultCardEl.innerHTML = `<a href="/book/${results[i].id}" target="new">
-                        <em>${results[i].title}</em>`;
+                        resultCardEl.innerHTML = `<a href="/book/${resultData.id}" target="new">
+                        <em>${resultData.title}</em>`;
 
                         resultCardEl.append(addButtonEl);
 
@@ -79,7 +79,7 @@ document.querySelector('.book-search').addEventListener('submit', fuzzyHandler);
 
 //console.log(searchVal);
 
-const books = [{
+/*const books = [{
     id: 2,
     title: 'Love in the Time of Cholera',
     first_name: 'Gabriel',
@@ -88,5 +88,5 @@ const books = [{
 
 const results = fuzzysort.go('time', books, {key: 'title'});
 
-console.log(results);
+console.log(results);*/
 </script>
