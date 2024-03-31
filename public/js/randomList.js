@@ -15,22 +15,23 @@ const getListLength = async () => {
             var index = [];
             for (var i = 0; i < 3; i++){
             var num = Math.floor(Math.random() * resultData.length);
-                printCards(resultData);
+            console.log(num);
+                printCards(data[num])
 
             }
                 });
 };
 
-function printCards(resultData) {
+function printCards(val) {
     const randomCardEl = document.createElement('div');
     randomCardEl.classList.add('col-3-sm');
 
     randomCardEl.innerHTML = `
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">${resultData.title}</h5>
-        <p class="card-text">${resultData.list_desc}</p>
-        <a href="/list/${resultData.id}" class="btn btn-primary">Go to list</a>
+        <h5 class="card-title">${val.title}</h5>
+        <p class="card-text">${val.list_desc}</p>
+        <a href="/list/${val.id}" class="btn btn-primary">Go to list</a>
       </div>
     </div>`
 };
