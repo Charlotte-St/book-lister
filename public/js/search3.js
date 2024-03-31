@@ -1,1 +1,1 @@
-import Fuse from '../../node_modules/fuse.js';
+var fuzzy = require('../../node_modules/fuzzy');
