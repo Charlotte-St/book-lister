@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {ListItem, Book, List} = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //Get list items
 
@@ -11,7 +12,7 @@ router.get('/', (req, res) => {
 
 //Post list items
 
-router.post('/', /*withAuth,*/ async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const listItem = await ListItem.create({
             ...req.body,
@@ -26,7 +27,7 @@ router.post('/', /*withAuth,*/ async (req, res) => {
 
 //Delete list itmes
 
-router.delete('/:id', /*withAuth,*/ async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
       const listItemData = await ListItem.destroy({
         where: {

@@ -26,7 +26,7 @@ router.get('/login', (req, res) => {
 
 //profile page
 
-router.get('/profile', /*withAuth,*/  async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
     try{
         const userData = await User.findByPk(req.session.user_id, {
             include: [List]
@@ -111,9 +111,8 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 })
 
-//add book to list page
 
-//new list page
+//add book to list
 router.get('/addbook/:id', withAuth, async (req, res) => {
     try{
         const listData = await List.findByPk(req.params.id, {
