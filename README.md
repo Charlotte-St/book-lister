@@ -4,8 +4,24 @@
 
 ## Table of Contents
 
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Signing Up/Logging In](#signing-uplogging-in)
+    - [Creating a List](#creating-a-list)
+    - [Viewing Your Lists](#viewing-your-lists)
+    - [Adding and Removing Books from a List](#adding-and-removing-books-from-a-list)
+    - [Viewing Book Data](#viewing-book-data)
+- [Testing](#testing)
+- [License](#license)
+- [Credits](#credits)
+- [Contributing](#contributing)
+- [Contact](#contact)
+
 
 ## Description
+
+Book Lister is a site that can be used to create lists of books and share those lists. 
 
 ## Installation
 
@@ -58,6 +74,8 @@ MIT
 [Font Awesome](https://fontawesome.com/)
 
 [fast-csv](https://www.npmjs.com/package/fast-csv)
+
+[fuzzysort](https://www.npmjs.com/package/fuzzysort)
 
 ### Tutorials 
 

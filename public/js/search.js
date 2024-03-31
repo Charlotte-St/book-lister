@@ -36,13 +36,11 @@ const addBookHandler = async (event) => {
     }
 };
 
-//const el = document.getElementById('add-button');
-//if (el){
   document.getElementById('add-button').addEventListener('click', addBookHandler);
-//};
 
 
 
+//This function + event listener temporarily live on the addBook.handlebars file
 /*const searchHandler = async (event) => {
     event.preventDefault();
 
