@@ -23,11 +23,14 @@ const addBookHandler = async () => {
         window.location.reload();
       } else {
         alert('Failed to add book');
+        console.log('Failure');
       }
     }
 };
 
+const el = document.getElementById('add-button');
+if (el){
+  document.getElementById('add-button').addEventListener('click', addBookHandler);
+};
 
-//addBookHandler();
 
-document.querySelector('#add-button').addEventListener('click', addBookHandler);
