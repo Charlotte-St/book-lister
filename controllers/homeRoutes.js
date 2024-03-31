@@ -117,7 +117,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 router.get('/addbook/:id', withAuth, async (req, res) => {
     try{
         const listData = await List.findByPk(req.params.id, {
-            include: [{model: Book, through: ListItem}]
+            include:{model: Book}
         });
 
         const list = listData.get({plain: true});
