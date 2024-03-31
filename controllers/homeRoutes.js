@@ -96,7 +96,7 @@ router.get('/book/:id', withAuth, async(req, res) => {
 
 //Edit list page
 
-router.get('/edit/:id',/*withAuth,*/ async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
     try{
         const listData = await List.findByPk(req.params.id);
 
@@ -110,5 +110,26 @@ router.get('/edit/:id',/*withAuth,*/ async (req, res) => {
         res.status(500).json(err);
     }
 })
+
+//add book to list page
+
+//new list page
+router.get('/addbook/:id', withAuth, async (req, res) => {
+    try{
+        const listData = await List.findByPk(req.params.id, {
+            include: [{model: Book, through: ListItem}]
+        });
+
+        const list = listData.get({plain: true});
+
+        res.render('addbook', {
+            list,
+            logged_in: req.session.logged_in
+        })
+    } catch (err){
+        res.status(500).json(err);
+    }
+})
+
 
 module.exports = router;
