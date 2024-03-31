@@ -14,7 +14,7 @@ const addBookHandler = async (event) => {
     console.log('Adding');
 
     const bookId = event.target.value;
-    const listId = window.location.toString().split('/')[window.location.toString().split('/').length-1];
+    const listId = window.location.toString().split('/')[window.location.toString().split('/').length-1].replace('?', '');
   
     console.log(bookId);
     console.log(listId);
@@ -36,10 +36,10 @@ const addBookHandler = async (event) => {
     }
 };
 
-const el = document.getElementById('add-button');
-if (el){
+//const el = document.getElementById('add-button');
+//if (el){
   document.getElementById('add-button').addEventListener('click', addBookHandler);
-};
+//};
 
 
 
