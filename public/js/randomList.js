@@ -31,7 +31,7 @@ function printCards(val) {
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">${val.title}</h5>
-        <p class="card-text">${val.list_desc}</p>
+        <p class="card-text">${val.listDesc}</p>
         <a href="/list/${val.id}" class="btn btn-primary">Go to list</a>
       </div>
     </div>`
