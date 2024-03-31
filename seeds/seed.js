@@ -24,13 +24,13 @@ let csvStream = fastcsv
 
         const pool = new Pool(
             {
-                user: process.env.DB_USER,
+                /*user: process.env.DB_USER,
                 password: process.env.DB_PASSWORD,
                 host: 'localhost', 
-                database: process.env.DB_NAME
+                database: process.env.DB_NAME*/
+                connectionString: process.env.DATABASE_URL
             }, 
         
-            console.log('Connected to db')
         );
 
         const sql = `INSERT INTO book (olid, oclc, title, first_name, last_name, pages, year, genre, descr) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`;
@@ -56,10 +56,3 @@ let csvStream = fastcsv
     });
 
     stream.pipe(csvStream); 
-
-    //Make JSON object index for Fuzzy Search
-
-    /*fastcsv.parse(stream)
-        .on('error', error => console.log(error))
-        .on('data', row => console.log(row))
-        .on('end', console.log(`Parsed rows`));*/
