@@ -10,26 +10,25 @@ const addBookHandler = async () => {
 
     console.log('Adding');
 
-    const book_id = document.getElementById('add-button').getAttribute('book-id');
-    const list_id = window.location.toString().split('/')[window.location.toString().split('/').length-1];
+    const bookId = document.getElementById('add-button').getAttribute('book-id');
+    const listId = window.location.toString().split('/')[window.location.toString().split('/').length-1];
   
-    console.log(book_id);
-    console.log(list_id);
+    console.log(bookId);
+    console.log(listId);
 
-    if (book_id && list_id) {
+    if (bookId && listId) {
       const response = await fetch('/api/listitem', {
         method: 'POST',
-        body: JSON.stringify({ book_id, list_id }),
+        body: JSON.stringify({ bookId, listId }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        window.location.reload();
+        window.location.assign(`/list/${listId}`);
       } else {
         alert('Failed to add book');
-        console.log('Failure');
       }
     }
 };
@@ -54,7 +53,6 @@ const searchHandler = async (event) => {
         }
     }).then((response) => response.json()).then(
         (data) => {resultData = data;
-            //scriptEl.innerHTML = '<script src="../js/addBook.js"></script>';
 
                 for ( i = 0; i < resultData.length; i++){
                     if (resultData[i].title.includes(searchVal)){
@@ -69,7 +67,8 @@ const searchHandler = async (event) => {
                         const addButtonEl = document.createElement('button');
                         addButtonEl.classList.add('btn', 'btn-primary');
                         addButtonEl.setAttribute('id', 'add-button');
-                        addButtonEl.setAttribute('book_id', `${resultData[i].id}`);
+                        addButtonEl.textContent = 'Add book';
+                        addButtonEl.setAttribute('book-id', `${resultData[i].id}`);
                         addButtonEl.addEventListener('click', addBookHandler);
 
                         resultCardEl.innerHTML = `<a href="/book/${resultData[i].id}" target="new">
@@ -77,13 +76,6 @@ const searchHandler = async (event) => {
 
                         resultCardEl.append(addButtonEl);
 
-                        /*resultEl.innerHTML = ` <div class="card">
-                        <div class="card-body">
-                        <a href="/book/${resultData[i].id}" target="new">
-                        <em>${resultData[i].title}</em> by ${resultData[i].firstName} ${resultData[i].lastName}</a>
-                        <button class="btn btn-primary" id="add-button" book_id="${resultData[i].id}">Add to list</button>
-                        </div>
-                        </div>`*/
                         mainContentEl.append(resultEl);
                     }
                 };
