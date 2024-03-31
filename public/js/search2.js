@@ -1,4 +1,4 @@
-const {FuzzySearch} = require('fuzzy-search');
+const {FuzzySearch} = require('../../js/FuzzySearch.js');
 
 
 const books = [{

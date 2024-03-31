@@ -21,7 +21,6 @@
         "express-session": "^1.17.1",
         "fast-csv": "^5.0.1",
         "fuse.js": "^7.0.0",
-        "fuzzy-search": "^3.2.1",
         "pg": "^8.11.3",
         "sequelize": "^6.3.5"
     },

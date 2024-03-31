@@ -1,32 +1,32 @@
-const bookSearchResultEl = document.querySelector('#book-search-result');
-//const mainContentEl = document.querySelector('#main-content');
+const bookSearchResultEl = document.querySelector('.book-search-result');
+const mainContentEl = document.querySelector('#main-content');
 
 var resultData;
 console.log('loaded');
 
-const printResults = (resultData) => {
+/*const printResults = (resultData) => {
     console.log('Printing result card')
-    const cardGroupEl = document.createElement('div');
-    cardGroupEl.classList.add('card-group');
-
-    const resultCardEl = document.createElement('div');
-    resultCardEl.classList.add('card')
 
     const resultEl = document.createElement('div');
     resultEl.classList.add('card-body')
     console.log(resultData.id);
-    resultEl.innerHTML = `<a href="/book/${resultData.id}" target="new"><em>${resultData.title}</em> by ${resultData.first_name} ${resultData.last_name}</a>`
+    resultEl.innerHTML = `<a href="/book/${resultData.id}" target="new"><em>${resultData.title}</em> by ${resultData.firstName} ${resultData.lastName}</a>`
+
+    const resultCardEl = document.createElement('div');
+    resultCardEl.classList.add('card')
 
     const resultOptEl = document.createElement('div');
     resultOptEl.classList.add('card');
 
     resultOptEl.innerHTML = `<button class="btn add-book btn-primary" id="add-button" book_id="${resultData.id}">Add</button>`;
     
+    console.log(resultCardEl);
+
     resultCardEl.append(resultEl);
-    cardGroupEl.append(resultCardEl);
-    cardGroupEl.append(resultOptEl);
-    bookSearchResultEl.append(cardGroupEl);
-}
+    resultOptEl.append(resultCardEl);
+    bookSearchResultEl.append(resultOptEl);
+    //bookSearchResultEl.append(cardGroupEl);
+}*/
 
 const searchHandler = async (event) => {
     event.preventDefault();
@@ -44,10 +44,14 @@ const searchHandler = async (event) => {
         (data) => {resultData = data;
             console.log(resultData);
                 for ( i = 0; i < resultData.length; i++){
-                    bookSearchResultEl.textContent= '';
+                    //bookSearchResultEl.textContent= 'Results';
                     if (resultData[i].title.includes(searchVal)){
-                        printResults(resultData[i]);
-                        console.log(resultData[i]);
+                        //printResults(resultData[i]);
+                        const resultEl = document.createElement('div');
+                        resultEl.classList.add('card-body')
+                        console.log(resultData[i].id);
+                        resultEl.innerHTML = `<a href="/book/${resultData[i].id}" target="new"><em>${resultData[i].title}</em> by ${resultData[i].firstName} ${resultData[i].lastName}</a>`
+                        mainContentEl.append(resultEl);
                     }
                 }
                 });
