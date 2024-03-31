@@ -9,11 +9,11 @@ console.log('Add book running')
 
 
 //Add book to list
-const addBookHandler = async () => {
+const addBookHandler = async (event) => {
 
     console.log('Adding');
 
-    const bookId = document.getElementById('add-button').getAttribute('book-id');
+    const bookId = event.target.value;
     const listId = window.location.toString().split('/')[window.location.toString().split('/').length-1];
   
     console.log(bookId);
@@ -71,7 +71,7 @@ const searchHandler = async (event) => {
                         addButtonEl.classList.add('btn', 'btn-primary');
                         addButtonEl.setAttribute('id', 'add-button');
                         addButtonEl.textContent = 'Add book';
-                        addButtonEl.setAttribute('book-id', `${resultData[i].id}`);
+                        addButtonEl.setAttribute('value', `${resultData[i].id}`);
                         addButtonEl.addEventListener('click', addBookHandler);
 
                         resultCardEl.innerHTML = `<a href="/book/${resultData[i].id}" target="new">
