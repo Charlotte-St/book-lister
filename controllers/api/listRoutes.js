@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {List, ListItem, Book} = require('../../models');
-//const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 
 
 //Get route for fetching all lists
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 //Post route for adding lists
 
-router.post('/', /*withAuth,*/ async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const list = await List.create({
             ...req.body,
@@ -29,7 +29,7 @@ router.post('/', /*withAuth,*/ async (req, res) => {
 
 //Put route for updating lists
 
-router.put('/edit/:id', /*withAuth,*/ async (req, res) => {
+router.put('/edit/:id', withAuth, async (req, res) => {
   try {
       const list = await List.update({
           title: req.body.title,
@@ -48,7 +48,7 @@ router.put('/edit/:id', /*withAuth,*/ async (req, res) => {
 
 //Get list data by ID
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
       const listData = await List.findByPk(req.params.id, {
         include: [{model: Book, through: ListItem}]
@@ -67,7 +67,7 @@ router.get('/:id', async (req, res) => {
 
   //Delete route for lists
 
-  router.delete('/:id', /*withAuth,*/ async (req, res) => {
+  router.delete('/:id', withAuth, async (req, res) => {
     try {
       const postData = await List.destroy({
         where: {
