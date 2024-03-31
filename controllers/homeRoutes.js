@@ -49,7 +49,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/list/:id', withAuth, async(req, res) => {
    try{
     const listData = await List.findByPk(req.params.id, {
-        include: [/*{model: ListItem},*/{model: Book, through: ListItem}]
+        include: [{model: Book, through: ListItem}]
     });
 
     const list = listData.get({plain: true});
