@@ -43,7 +43,7 @@ if (el){
 
 
 
-const searchHandler = async (event) => {
+/*const searchHandler = async (event) => {
     event.preventDefault();
 
     const searchVal = document.querySelector('#search-input').value.trim();
@@ -86,4 +86,4 @@ const searchHandler = async (event) => {
 };
 
 
-document.querySelector('.book-search').addEventListener('submit', searchHandler);
+document.querySelector('.book-search').addEventListener('submit', searchHandler);*/

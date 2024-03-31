@@ -13,4 +13,80 @@
 
 <script src="../js/search.js"></script>
 
-<script src="../js/search3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
+
+<script>
+
+const fuzzyHandler = async (event) => {
+    event.preventDefault();
+
+    const searchVal = document.querySelector('#search-input').value.trim();
+    
+     fetch('/api/book/', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        plain: true
+        }
+    }).then((response) => response.json()).then(
+        (data) => {resultData = data;
+                    const books = [{
+    id: 2,
+    title: 'Love in the Time of Cholera',
+    first_name: 'Gabriel',
+    last_name: 'Garcia Marquez'
+}, {id: 1, title: 'The Sound and the Fury', first_name: 'William', last_name: 'Faulkner'}];
+
+const results = fuzzysort.go(searchVal, books, {key: 'title'});
+
+console.log(results);
+
+                for ( i = 0; i < results.length; i++){
+                    if (results.id = resultData[i]){
+                        const resultEl = document.createElement('div');                        
+                        resultEl.classList.add('card')
+                        
+                        const resultCardEl = document.createElement('div');
+                        resultCardEl.classList.add('card-body');
+                        
+                        resultEl.append(resultCardEl);
+
+                        const addButtonEl = document.createElement('button');
+                        addButtonEl.classList.add('btn', 'btn-primary');
+                        addButtonEl.setAttribute('id', 'add-button');
+                        addButtonEl.textContent = 'Add book';
+                        addButtonEl.setAttribute('value', `${resultData.id}`);
+                        addButtonEl.addEventListener('click', addBookHandler);
+
+                        resultCardEl.innerHTML = `<a href="/book/${resultData.id}" target="new">
+                        <em>${resultData.title}</em>`;
+
+                        resultCardEl.append(addButtonEl);
+
+                        mainContentEl.append(resultEl);
+                    }
+                };
+                });
+};
+
+
+document.querySelector('.book-search').addEventListener('submit', fuzzyHandler);
+
+
+
+
+//var val = document.querySelector('#search-input').value;
+
+//console.log(searchVal);
+
+/*const books = [{
+    id: 2,
+    title: 'Love in the Time of Cholera',
+    first_name: 'Gabriel',
+    last_name: 'Garcia Marquez'
+}];
+
+const results = fuzzysort.go('time', books, {key: 'title'});
+
+console.log(results);*/
+</script>
