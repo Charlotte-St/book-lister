@@ -1,0 +1,1 @@
+import Fuse from '../../node_modules/fuse.js';
