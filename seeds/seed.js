@@ -55,4 +55,11 @@ let csvStream = fastcsv
 
     });
 
-    stream.pipe(csvStream);
+    stream.pipe(csvStream); 
+
+    //Make JSON object index for Fuzzy Search
+
+    /*fastcsv.parse(stream)
+        .on('error', error => console.log(error))
+        .on('data', row => console.log(row))
+        .on('end', console.log(`Parsed rows`));*/
