@@ -12,6 +12,7 @@
 </br>
     <div type="row">
         <div type="card">
+            <div type="card-body">
             <a href="/addbook/{{id}}">
                 <button class="btn btn-primary">Add a book</button>
             </a>
@@ -19,11 +20,13 @@
                 <button class="btn btn-primary">Edit list</button>
             </a>
             <button class="btn btn-danger del-list" data-id="{{id}}">Delete list</button>
+            </br></br>
+            </div>
         </div>
     </div>
 <div class="row">
-    <div class="col-sm-2">
         {{#each books as |book|}}
+        <div class="col-sm-2">
             <a href="/book/{{id}}">
                 <div class="card">
                     <img class="card-img object-fit-cover" src="https://covers.openlibrary.org/b/olid/{{book.olid}}-M.jpg" alt="{{book.title}} cover">
@@ -37,7 +40,7 @@
                             <button class="btn btn-primary del-book" data-id="{{listitem.id}}">Delete</button>
                         </div>
                 </div>
-            
+                </div>
         {{/each}}
     </div>
 </div>
