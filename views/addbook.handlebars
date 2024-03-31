@@ -12,17 +12,303 @@
                 </div>
 
 <script src="../js/search.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/fuzzysort@2.0.4/fuzzysort.min.js"></script>
-
 <script>
+
+const index = [
+    {
+      "olid": "OL24373231M",
+      "oclc": "560251531",
+      "title": "The Sound and The Fury",
+      "first_name": "William",
+      "last_name": "Faulkner",
+      "pages": "427",
+      "year": "1956",
+      "genre": "Fiction",
+      "descr": "\"The story concerns various members of a Southern family, once wealthy landowners but now struggling to maintain their reputation.\""
+    },
+    {
+      "olid": "OL25954563M",
+      "oclc": "123113448",
+      "title": "Love in the Time of Cholera",
+      "first_name": "Gabriel",
+      "last_name": "Garcia Marquez",
+      "pages": "423",
+      "year": "1985",
+      "genre": "Fiction",
+      "descr": "\"Set on the Caribbean coast of South America, this love story brings together Fermina Daza, her distinguished husband, and a man who has secretly loved her for more than fifty years.\""
+    },
+    {
+      "olid": "OL31664856M",
+      "oclc": "1152056839",
+      "title": "Home Body",
+      "first_name": "Rupi",
+      "last_name": "Kaur",
+      "pages": "188",
+      "year": "2020",
+      "genre": "Poetry",
+      "descr": "\"Home body is a collection of raw, honest conversations with oneself - reminding readers to fill up on love, acceptance, community, family, and embrace change.\""
+    },
+    {
+      "olid": "OL24244505M",
+      "oclc": "38994823",
+      "title": "Killing Floor",
+      "first_name": "Lee",
+      "last_name": "Child",
+      "pages": "419",
+      "year": "1997",
+      "genre": "Mystery Fiction",
+      "descr": "\"Jack Reacher, an ex-military policeman, is passing through the town of Margarve, Georgia, when he is accused of murder, and must somehow find the real killer and prove his innocence--with virtually the whole town against him.\""
+    },
+    {
+      "olid": "OL32739720M",
+      "oclc": "1273680237",
+      "title": "The Last Rose of Shanghai",
+      "first_name": "Weina",
+      "last_name": "Dai Randel",
+      "pages": "412",
+      "year": "2021",
+      "genre": "Historical Fiction",
+      "descr": "\"As the war escalates, Aiyi and Ernest find themselves torn apart, and their choices between love and survival grow more desperate.\""
+    },
+    {
+      "olid": "OL25431390M",
+      "oclc": "822028608",
+      "title": "Steelheart",
+      "first_name": "Brandon",
+      "last_name": "Sanderson",
+      "pages": "386",
+      "year": "2013",
+      "genre": "Young Adult Fiction",
+      "descr": "\"At age eight, David watched as his father was killed by an Epic, a human with superhuman powers, and now, ten years later, he joins the Reckoners--the only people who are trying to kill the Epics and end their tyranny.\""
+    },
+    {
+      "olid": "OL26855580M",
+      "oclc": "939706285",
+      "title": "Scythe",
+      "first_name": "Neal",
+      "last_name": "Shusterman",
+      "pages": "433",
+      "year": "2016",
+      "genre": "Young Adult Fiction",
+      "descr": "\"Citra and Rowan are teenagers who have been selected to be scythe's apprentices, and despite wanting nothing to do with the vocation they must learn the art of killing and come to understand the necessity of what they do.\""
+    },
+    {
+      "olid": "OL781338M",
+      "oclc": "32511029",
+      "title": "The Makioka Sisters",
+      "first_name": "Junichiro",
+      "last_name": "Tanizaki",
+      "pages": "520",
+      "year": "1946",
+      "genre": "Fiction",
+      "descr": "\"Tanizaki's masterpiece is the story of four sisters, and the declining fortunes of a traditional Japanese family. It is a loving and nostalgic recreation of the sumptuous, intricate upper-class life of Osaka immediately before World War Two.\""
+    },
+    {
+      "olid": "OL3368289W",
+      "oclc": "370521214",
+      "title": "Where the Sidewalk Ends",
+      "first_name": "Shel",
+      "last_name": "Silverstein",
+      "pages": "183",
+      "year": "1974",
+      "genre": "Childrens Poetry",
+      "descr": "\"A boy who turns into a TV set and a girl who eats a whale are only two of the characters in a collection of humorous poetry illustrated with the author's own drawings.\""
+    },
+    {
+      "olid": "OL29372941M",
+      "oclc": "925158219",
+      "title": "Kindred",
+      "first_name": "Octavia",
+      "last_name": "Butler",
+      "pages": "304",
+      "year": "1979",
+      "genre": "Fiction",
+      "descr": "\"Dana, a modern black woman, is celebrating her twenty-sixth birthday with her new husband when she is snatched abruptly from her home in California and transported to the antebellum South. Rufus, the white son of a plantation owner, is drowning, and Dana has been summoned to save him. Dana is drawn back repeatedly through time to the slave quarters, and each time the stay grows longer, more arduous, and more dangerous until it is uncertain whether or not Dana’s life will end, long before it has a chance to begin.\""
+    },
+    {
+      "olid": "OL27037938M",
+      "oclc": "46986322",
+      "title": "The Lord of the Rings",
+      "first_name": "J.R.R.",
+      "last_name": "Tolkien",
+      "pages": "1168",
+      "year": "1954",
+      "genre": "Fantasy",
+      "descr": "\"The Lord of the Rings tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizared; the hobbits Merry, Pippin, and Sam; Gimli the Dwarf; Legolas the Elf; Boromir of Gondor; and a tall, mysterious stranger called Strider.\""
+    },
+    {
+      "olid": "OL32244937M",
+      "oclc": "841198242",
+      "title": "One Summer",
+      "first_name": "Bill",
+      "last_name": "Bryson",
+      "pages": "544",
+      "year": "2013",
+      "genre": "Non-Fiction",
+      "descr": "\"Let our favourite writer of narrative non-fiction take you back to a summer when America came of age and changed the world for ever.\""
+    },
+    {
+      "olid": "OL30550827M",
+      "oclc": "503303",
+      "title": "Dune",
+      "first_name": "Frank",
+      "last_name": "Herbert",
+      "pages": "412",
+      "year": "1965",
+      "genre": "Science Fiction",
+      "descr": "\"Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the \"spice\" melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for...\""
+    },
+    {
+      "olid": "OL682948M",
+      "oclc": "37341397",
+      "title": "Into Thin Air",
+      "first_name": "Jon",
+      "last_name": "Krakauer",
+      "pages": "384",
+      "year": "1997",
+      "genre": "Non-Fiction",
+      "descr": "\"The true story of the deadliest season in the history of Mt. Everest as six climbers lost their lives in their attempt to reach the summit.\""
+    },
+    {
+      "olid": "OL22448002W",
+      "oclc": "1162194386",
+      "title": "Crying in H Mart",
+      "first_name": "Michelle",
+      "last_name": "Zauner",
+      "pages": "239",
+      "year": "2021",
+      "genre": "Memoir",
+      "descr": "\"In this exquisite story of family, food, grief, and endurance, Michelle Zauner proves herself far more than a dazzling singer, songwriter, and guitarist. With humor and heart, she tells of growing up one of the few Asian American kids at her school in Eugene, Oregon; of struggling with her mother’s particular, high expectations of her; of a painful adolescence; of treasured months spent in her grandmother’s tiny apartment in Seoul, where she and her mother would bond, late at night, over heaping plates of food. \""
+    },
+    {
+      "olid": "OL30778101M",
+      "oclc": "708741638",
+      "title": "The Emperor of All Maladies: A Biography of Cancer",
+      "first_name": "Siddhartha",
+      "last_name": "Mukherjee",
+      "pages": "571",
+      "year": "2010",
+      "genre": "Non-Fiction",
+      "descr": "\"A boy who turns into a TV set and a girl who eats a whale are only two of the characters in a collection of humorous poetry illustrated with the author's own drawings.\""
+    },
+    {
+      "olid": "OL30109922M",
+      "oclc": "801385536",
+      "title": "In Cold Blood",
+      "first_name": "Truman",
+      "last_name": "Capote",
+      "pages": "434",
+      "year": "1965",
+      "genre": "Non-Fiction",
+      "descr": "\"On November 15, 1959, in the small town of Holcomb, Kansas, four members of the Clutter family were savagely murdered by blasts from a shotgun held a few inches from their faces. There was no apparent motive for the crime, and there were almost no clues. \""
+    },
+    {
+      "olid": "OL361722M",
+      "oclc": "39256652",
+      "title": "A Brief History of Time",
+      "first_name": "Stephen",
+      "last_name": "Hawking",
+      "pages": "212",
+      "year": "1998",
+      "genre": "Non-Fiction",
+      "descr": "\"When it was first published in 1988 the ideas discussed in it were at the cutting edge of what was then known about the universe. In the intervening twenty years there have been extraordinary advances in the technology of observing both the micro- and macro-cosmic world. Indeed, during that time cosmology and the theoretical sciences have entered a new golden age\""
+    },
+    {
+      "olid": "OL35558418M",
+      "oclc": "1268492352",
+      "title": "1984",
+      "first_name": "George",
+      "last_name": "Orwell",
+      "pages": "384",
+      "year": "1949",
+      "genre": "Fiction",
+      "descr": "\"Winston Smith rewrites history. It’s his job. Hidden away in the Record Department of the sprawling Ministry of Truth, he helps the Party, and the omnipresent Big Brother, control the people of Oceania. Winston knows what a good citizen of Oceania must do: show his devotion for Big Brother and the Party; abstain from all vices; and, most importantly, possess no critical thoughts of their own. The new notebook he’s begun to write in is definitely against the rules – in fact, the Thought Police could arrest him simply for having it. Yet, as Winston begins to write his own history, a seed of rebellion begins to grow in his heart – one that could have devastating consequences.\""
+    },
+    {
+      "olid": "OL21554226M",
+      "oclc": "17548829",
+      "title": "Beloved",
+      "first_name": "Toni",
+      "last_name": "Morrison",
+      "pages": "275",
+      "year": "1987",
+      "genre": "Fiction",
+      "descr": "\" It is the story--set in post-Civil War Ohio--of Sethe, an escaped slave who has risked death in order to wrench herself from a living death; who has lost a husband and buried a child; who has borne the unthinkable and not gone mad: a woman of iron eyes and backbone to match.\""
+    },
+    {
+      "olid": "OL5736965W",
+      "oclc": "1082975160",
+      "title": "Jane Eyre",
+      "first_name": "Charlotte",
+      "last_name": "Bronte",
+      "pages": "328",
+      "year": "1847",
+      "genre": "Fiction",
+      "descr": "\"Jane Eyre experienced abuse at a young age, not only from her aunt—who raised her after both her parents died—but also from the headmaster of Lowood Institution, where she is sent away to. After ten years of living and teaching at Lowood Jane decides she is ready to see more of the world and takes a position as a governess at Thornfield Hall. Jane later meets the mysterious master of Thornfield Hall, Mr. Rochester, and becomes drawn to him.\""
+    },
+    {
+      "olid": "OL27603789M",
+      "oclc": "1039621949",
+      "title": "Slaughterhouse Five",
+      "first_name": "Kurt",
+      "last_name": "Vonnegut",
+      "pages": "275",
+      "year": "1968",
+      "genre": "Fiction",
+      "descr": "\"Slaughterhouse-Five is one of the world's great anti-war books. Centering on the infamous fire-bombing of Dresden, Billy Pilgrim's odyssey through time reflects the mythic journey of our own fractured lives as we search for meaning in what we are afraid to know.\""
+    },
+    {
+      "olid": "OL675783W",
+      "oclc": "965518824",
+      "title": "The Handmaid's Tale",
+      "first_name": "Margaret",
+      "last_name": "Atwood",
+      "pages": "311",
+      "year": "1985",
+      "genre": "Fiction",
+      "descr": "\"In Margaret Atwood’s dystopian future, environmental disasters and declining birthrates have led to a Second American Civil War. The result is the rise of the Republic of Gilead, a totalitarian regime that enforces rigid social roles and enslaves the few remaining fertile women. Offred is one of these, a Handmaid bound to produce children for one of Gilead’s commanders. Deprived of her husband, her child, her freedom, and even her own name, Offred clings to her memories and her will to survive.\""
+    }
+  ];
+
+
 
 const fuzzyHandler = async (event) => {
     event.preventDefault();
-
+    mainContentEl.innerHTML = '';
+    console.log(index[0]);
     const searchVal = document.querySelector('#search-input').value.trim();
+
+    const results = fuzzysort.go(searchVal, index, {key: 'title'});
+
+    console.log(results);
+    console.log(results.length);
+
+    for (let i = 0; i < results.length; i++){
+        const resultEl = document.createElement('div');                        
+                        resultEl.classList.add('card')
+                        
+                        const resultCardEl = document.createElement('div');
+                        resultCardEl.classList.add('card-body');
+                        
+                        resultEl.append(resultCardEl);
+
+                        const addButtonEl = document.createElement('button');
+                        addButtonEl.classList.add('btn', 'btn-primary');
+                        addButtonEl.setAttribute('id', 'add-button');
+                        addButtonEl.textContent = 'Add book';
+                        addButtonEl.setAttribute('value', `${results[i].obj.year}`);
+                        addButtonEl.addEventListener('click', addBookHandler);
+
+                        resultCardEl.innerHTML = `<a href="/book/${results[i].obj.year}" target="new">
+                        <em>${results[i].obj.title}</em> by ${results[i].obj.first_name} ${results[i].obj.last_name}`;
+
+                        resultCardEl.append(addButtonEl);
+
+                        mainContentEl.append(resultEl);
+    }
     
-     fetch('/api/book/', {
+   /*  fetch('/api/book/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -30,16 +316,10 @@ const fuzzyHandler = async (event) => {
         }
     }).then((response) => response.json()).then(
         (data) => {resultData = data;
-                    const books = [{
-    id: 2,
-    title: 'Love in the Time of Cholera',
-    first_name: 'Gabriel',
-    last_name: 'Garcia Marquez'
-}, {id: 1, title: 'The Sound and the Fury', first_name: 'William', last_name: 'Faulkner'}];
 
-const results = fuzzysort.go(searchVal, books, {key: 'title'});
+        const results = fuzzysort.go(searchVal, index, {key: 'title'});
 
-console.log(results);
+        console.log(results);
 
                 for ( i = 0; i < results.length; i++){
                     if (results.id = resultData[i]){
@@ -66,7 +346,7 @@ console.log(results);
                         mainContentEl.append(resultEl);
                     }
                 };
-                });
+                });*/
 };
 
 
