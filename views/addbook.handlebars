@@ -30,6 +30,7 @@ const index = [
     },
     {
       "olid": "OL25954563M",
+      "id": 2,
       "oclc": "123113448",
       "title": "Love in the Time of Cholera",
       "first_name": "Gabriel",
@@ -41,6 +42,7 @@ const index = [
     },
     {
       "olid": "OL31664856M",
+      "id": 3,
       "oclc": "1152056839",
       "title": "Home Body",
       "first_name": "Rupi",
@@ -52,6 +54,7 @@ const index = [
     },
     {
       "olid": "OL24244505M",
+      "id": 4,
       "oclc": "38994823",
       "title": "Killing Floor",
       "first_name": "Lee",
@@ -63,6 +66,7 @@ const index = [
     },
     {
       "olid": "OL32739720M",
+      "id": 5,
       "oclc": "1273680237",
       "title": "The Last Rose of Shanghai",
       "first_name": "Weina",
@@ -74,6 +78,7 @@ const index = [
     },
     {
       "olid": "OL25431390M",
+      "id": 6,
       "oclc": "822028608",
       "title": "Steelheart",
       "first_name": "Brandon",
@@ -85,6 +90,7 @@ const index = [
     },
     {
       "olid": "OL26855580M",
+      "id": 7,
       "oclc": "939706285",
       "title": "Scythe",
       "first_name": "Neal",
@@ -96,6 +102,7 @@ const index = [
     },
     {
       "olid": "OL781338M",
+      "id": 8,
       "oclc": "32511029",
       "title": "The Makioka Sisters",
       "first_name": "Junichiro",
@@ -107,6 +114,7 @@ const index = [
     },
     {
       "olid": "OL3368289W",
+      "id": 9,
       "oclc": "370521214",
       "title": "Where the Sidewalk Ends",
       "first_name": "Shel",
@@ -118,6 +126,7 @@ const index = [
     },
     {
       "olid": "OL29372941M",
+      "id": 10,
       "oclc": "925158219",
       "title": "Kindred",
       "first_name": "Octavia",
@@ -129,6 +138,7 @@ const index = [
     },
     {
       "olid": "OL27037938M",
+      "id": 11,
       "oclc": "46986322",
       "title": "The Lord of the Rings",
       "first_name": "J.R.R.",
@@ -140,6 +150,7 @@ const index = [
     },
     {
       "olid": "OL32244937M",
+      "id": 12,
       "oclc": "841198242",
       "title": "One Summer",
       "first_name": "Bill",
@@ -151,6 +162,7 @@ const index = [
     },
     {
       "olid": "OL30550827M",
+      "id": 13,
       "oclc": "503303",
       "title": "Dune",
       "first_name": "Frank",
@@ -162,6 +174,7 @@ const index = [
     },
     {
       "olid": "OL682948M",
+      "id": 14,
       "oclc": "37341397",
       "title": "Into Thin Air",
       "first_name": "Jon",
@@ -173,6 +186,7 @@ const index = [
     },
     {
       "olid": "OL22448002W",
+      "id": 15,
       "oclc": "1162194386",
       "title": "Crying in H Mart",
       "first_name": "Michelle",
@@ -184,6 +198,7 @@ const index = [
     },
     {
       "olid": "OL30778101M",
+      "id": 16,
       "oclc": "708741638",
       "title": "The Emperor of All Maladies: A Biography of Cancer",
       "first_name": "Siddhartha",
@@ -195,6 +210,7 @@ const index = [
     },
     {
       "olid": "OL30109922M",
+      "id": 17,
       "oclc": "801385536",
       "title": "In Cold Blood",
       "first_name": "Truman",
@@ -206,6 +222,7 @@ const index = [
     },
     {
       "olid": "OL361722M",
+      "id": 18,
       "oclc": "39256652",
       "title": "A Brief History of Time",
       "first_name": "Stephen",
@@ -217,6 +234,7 @@ const index = [
     },
     {
       "olid": "OL35558418M",
+      "id": 19,
       "oclc": "1268492352",
       "title": "1984",
       "first_name": "George",
@@ -228,6 +246,7 @@ const index = [
     },
     {
       "olid": "OL21554226M",
+      "id": 20,
       "oclc": "17548829",
       "title": "Beloved",
       "first_name": "Toni",
@@ -239,6 +258,7 @@ const index = [
     },
     {
       "olid": "OL5736965W",
+      "id": 21,
       "oclc": "1082975160",
       "title": "Jane Eyre",
       "first_name": "Charlotte",
@@ -250,6 +270,7 @@ const index = [
     },
     {
       "olid": "OL27603789M",
+      "id": 22,
       "oclc": "1039621949",
       "title": "Slaughterhouse Five",
       "first_name": "Kurt",
@@ -261,6 +282,7 @@ const index = [
     },
     {
       "olid": "OL675783W",
+      "id": 23,
       "oclc": "965518824",
       "title": "The Handmaid's Tale",
       "first_name": "Margaret",
@@ -276,7 +298,7 @@ const index = [
 
 const fuzzyHandler = async (event) => {
     event.preventDefault();
-    
+     mainContentEl.innerHTML = '';
     console.log(index[0]);
     const searchVal = document.querySelector('#search-input').value.trim();
 
