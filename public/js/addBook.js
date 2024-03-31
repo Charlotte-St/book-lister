@@ -1,7 +1,6 @@
 console.log('Add book running')
 
-const addBookHandler = async (event) => {
-    event.preventDefault();
+const addBookHandler = async () => {
 
     console.log('Adding');
 
@@ -29,4 +28,6 @@ const addBookHandler = async (event) => {
 };
 
 
-document.querySelector('#add-button').addEventListener('click', addBookHandler);
+addBookHandler();
+
+//document.querySelector('#add-button').addEventListener('click', addBookHandler);
