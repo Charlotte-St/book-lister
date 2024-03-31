@@ -28,6 +28,6 @@ const addBookHandler = async () => {
 };
 
 
-addBookHandler();
+//addBookHandler();
 
-//document.querySelector('#add-button').addEventListener('click', addBookHandler);
+document.querySelector('#add-button').addEventListener('click', addBookHandler);
