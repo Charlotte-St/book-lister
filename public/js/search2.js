@@ -14,6 +14,5 @@ const searcher = new FuzzySearch (books, ['title', 'first_name'],{
 
 const result = searcher.search('love');
 
-console.log(result);
 
 module.exports = FuzzySearch;

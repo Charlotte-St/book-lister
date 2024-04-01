@@ -5,7 +5,6 @@ const editListFormHandler = async (event) => {
     const list_desc = document.querySelector('#list-descr').value.trim();
     const id = window.location.toString().split('/')[window.location.toString().split('/').length-1];
 
-    console.log(id);
 
     if (title && list_desc) {
       const response = await fetch(`/api/list/edit/${id}`, {

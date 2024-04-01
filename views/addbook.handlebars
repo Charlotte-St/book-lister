@@ -3,9 +3,11 @@
                     {{!--{{#if (sessionuser session_user, list.userId)}} true {{else}} false{{/if}}--}}
                     <input type="text" id="search-input"><button type="submit" class="btn btn-primary mb-2" id="searchSubmit">Search</button>
                 </form>
-                <div id="main-content">
-                    <a href="/list/{{list.id}}"><button class="btn btn-primary" id="return">Return to list: {{list.title}}</button></a>
+                
+                <a href="/list/{{list.id}}"><button class="btn btn-primary" id="return">Return to list: {{list.title}}</button></a>
 
+                <div id="main-content">
+                  
                 </div>
                 <div id="script-div">
 
@@ -206,7 +208,7 @@ const index = [
       "pages": "571",
       "year": "2010",
       "genre": "Non-Fiction",
-      "descr": "\"A boy who turns into a TV set and a girl who eats a whale are only two of the characters in a collection of humorous poetry illustrated with the author's own drawings.\""
+      "descr": "A magnificently written 'biography' of cancer -- from its origins to the epic battle to cure, control, and conquer it"
     },
     {
       "olid": "OL30109922M",
@@ -299,13 +301,12 @@ const index = [
 const fuzzyHandler = async (event) => {
     event.preventDefault();
      mainContentEl.innerHTML = '';
-    console.log(index[0]);
+ 
     const searchVal = document.querySelector('#search-input').value.trim();
 
     const results = fuzzysort.go(searchVal, index, {key: 'title'});
 
-    console.log(results);
-    console.log(results.length);
+
 
     for (let i = 0; i < results.length; i++){
         const resultEl = document.createElement('div');                        
