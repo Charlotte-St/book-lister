@@ -2,6 +2,12 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+>[Book Lister](https://project-2-2nvv.onrender.com/)
+
+## Description
+
+Book Lister presents a new way to build lists of books. Users can assemble their list and share with others. 
+
 ## Table of Contents
 
 - [Description](#description)
@@ -17,11 +23,7 @@
 - [Credits](#credits)
 - [Contributing](#contributing)
 - [Contact](#contact)
-
-
-## Description
-
-Book Lister is a site that can be used to create lists of books and share those lists. 
+ 
 
 ## Installation
 
@@ -84,6 +86,12 @@ MIT
 [Bootstrap 5 Crash Course Tutorial #16 - Modals](https://www.youtube.com/watch?v=tt5uUMQgzl0)
 
 [Import CSV data into PostgreSQL using Node.js](https://www.bezkoder.com/node-js-csv-postgresql/)
+
+### Book Data
+
+[Open Library](https://openlibrary.org/)
+
+[WorldCat](https://search.worldcat.org/)
 
 ## Contributing
 

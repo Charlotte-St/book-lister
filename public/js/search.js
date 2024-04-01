@@ -5,19 +5,13 @@ const scriptEl = document.querySelector('#script-div');
 var resultData;
 
 
-console.log('Add book running')
-
-
 //Add book to list
 const addBookHandler = async (event) => {
 
-    console.log('Adding');
 
     const bookId = event.target.value;
     const listId = window.location.toString().split('/')[window.location.toString().split('/').length-1].replace('?', '');
   
-    console.log(bookId);
-    console.log(listId);
 
     if (bookId && listId) {
       const response = await fetch('/api/listitem', {

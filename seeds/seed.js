@@ -24,11 +24,10 @@ let csvStream = fastcsv
 
         const pool = new Pool(
             {
-                /*user: process.env.DB_USER,
+                user: process.env.DB_USER,
                 password: process.env.DB_PASSWORD,
                 host: 'localhost', 
-                database: process.env.DB_NAME*/
-                connectionString: process.env.DATABASE_URL
+                database: process.env.DB_NAME
             }, 
         
         );
