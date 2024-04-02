@@ -15,7 +15,7 @@ const listOwnerBtnHandler = () => {
     if (session_user_id == owner_user_id){
 
 
-        updateBtnEl.innerHTML = `<div type="card-body">
+        updateBtnEl.innerHTML = `<div type="card-body" id="update-controls">
         <a href="/addbook/${listId}">
             <button class="btn btn-primary">Add a book</button>
         </a>
@@ -24,10 +24,14 @@ const listOwnerBtnHandler = () => {
         </a>
         </div>`;
 
-        const deleteListBtnEl = document.createAttribute('button');
+        const updateControlEl = document.querySelector('#update-controls');
+
+        const deleteListBtnEl = document.createElement('button');
         deleteListBtnEl.classList.add('btn', 'btn-danger', 'del-list');
         deleteListBtnEl.setAttribute('data-id', `${listId}`);
-        deleteListBtnEl.innerText('Delete List');
+        deleteListBtnEl.innerText='Delete List';
+
+        updateControlEl.append(deleteListBtnEl);
 
         //`<button class="btn btn-danger del-list" data-id="${listId}">Delete list</button>
         //</br></br>`
@@ -56,7 +60,6 @@ const listOwnerBtnHandler = () => {
 
 listOwnerBtnHandler();
 
-console.log('Running Delete Book')
 
 const delBookHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
@@ -74,4 +77,22 @@ const delBookHandler = async (event) => {
   };
   
 
-  document.querySelector('.del-book').addEventListener('click', delBookHandler);
+    document.querySelector('.del-book').addEventListener('click', delBookHandler);
+
+  const delListHandler = async (event) => {
+      if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
+        const response = await fetch(`/api/list/${id}`, {
+          method: 'DELETE',
+        });
+    
+        if (response.ok) {
+          document.location.replace('/profile');
+        } else {
+          alert('Failed to delete the list');
+        }
+      }
+    };
+    
+  
+    document.querySelector('.del-list').addEventListener('click', delListHandler);
