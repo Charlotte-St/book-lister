@@ -36,7 +36,8 @@ router.get('/profile', withAuth, async (req, res) => {
 
         res.render('profile', {
             ...user, 
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            session_user_id: req.session.user_id
         })
 
     } catch(err){
@@ -56,7 +57,8 @@ router.get('/list/:id', withAuth, async(req, res) => {
 
     res.render('list', {
         ...list, 
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        session_user_id: req.session.user_id
     })
 } catch (err){
     res.status(500).json(err);
