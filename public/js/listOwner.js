@@ -11,6 +11,27 @@ const listId = window.location.toString().split('/')[window.location.toString().
 
 console.log(session_user_id);
 
+/*const delBookBtnHandler = () => {
+
+  const cards = document.querySelectorAll('#book-card-id');
+  const count = cards.length;
+
+  for (let i = 0; i < count.length; i++){
+    const cardFooterEl = document.createElement('div');
+    cardFooterEl.classList.add('card-footer');
+
+    const cardFooterBtnEl = document.createElement('button');
+    cardFooterBtnEl.classList.add('btn', 'btn-primary', 'del-book');
+    cardFooterBtnEl.setAttribute('data-id', `${list_item_id}`);
+    cardFooterBtnEl.innerText = 'Delete';
+
+    deleteFooterEl.append(cardFooterEl);
+    cardFooterEl.append(cardFooterBtnEl);
+
+  }
+
+}*/
+
 const listOwnerBtnHandler = () => {
     if (session_user_id == owner_user_id){
 
@@ -33,10 +54,26 @@ const listOwnerBtnHandler = () => {
 
         updateControlEl.append(deleteListBtnEl);
 
-        //`<button class="btn btn-danger del-list" data-id="${listId}">Delete list</button>
-        //</br></br>`
+        const cards = document.querySelectorAll('.card');
+        const count = cards.length;
 
-        const cardFooterEl = document.createElement('div');
+        console.log(count)
+
+        for (let i = 0; i < count.length; i++){
+          const cardFooterEl = document.createElement('div');
+          cardFooterEl.classList.add('card-footer');
+
+          const cardFooterBtnEl = document.createElement('button');
+          cardFooterBtnEl.classList.add('btn', 'btn-primary', 'del-book');
+          cardFooterBtnEl.setAttribute('data-id', `${list_item_id}`);
+          cardFooterBtnEl.innerText = 'Delete';
+
+          deleteFooterEl.append(cardFooterEl);
+          cardFooterEl.append(cardFooterBtnEl);
+
+  }
+
+       /* const cardFooterEl = document.createElement('div');
         cardFooterEl.classList.add('card-footer');
 
         const cardFooterBtnEl = document.createElement('button');
@@ -45,13 +82,14 @@ const listOwnerBtnHandler = () => {
         cardFooterBtnEl.innerText = 'Delete';
 
         deleteFooterEl.append(cardFooterEl);
-        cardFooterEl.append(cardFooterBtnEl);
+        cardFooterEl.append(cardFooterBtnEl);*/
 
     
    scriptEl.innerHTML = ` 
         <script src="../js/deleteList.js"></script>
         <script src="../js/deleteBook.js"></script>
-    `
+    `;
+    //delBookBtnHandler();
 
     } else {
         updateBtnEl.innerHTML= '';
