@@ -3,8 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-//const Fuse = require('fuse.js');
-//const helpers = require('./utils/helpers');
+
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -14,9 +13,6 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ });
 
-/*exphbs.registerHelper('sessionuser', function(value1, value2){
-  if (value1 == value2){ return true}
-});*/
 
 const sess = {
   secret: 'Very Secret',

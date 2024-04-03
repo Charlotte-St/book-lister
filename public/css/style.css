@@ -1,14 +1,17 @@
-a:link{
-  text-decoration: none;
+/* body styling*/
+
+body {
+  font-family: 'Optima', sans-serif;
 }
 
-a:visited{
-  text-decoration: none;
+/*nav bar styling*/
+
+.navbar{
+  background-color: #7F9EAF;
+  color: white;
 }
 
-a:active{
-  text-decoration: none;
-}
+/* button styling*/
 
 #top-anchor{
   margin-top: 20px;
@@ -26,14 +29,12 @@ a:active{
   margin-top: 20px;
 }
 
-.navbar{
-  background-color: #7F9EAF;
-  color: white;
+.btn {
+  border: 0px;
 }
 
 .btn-primary {
   background-color: #17A088;
-  border-color: #7F9EAF;
 }
 
 .btn-primary:hover{
@@ -42,20 +43,34 @@ a:active{
 
 a:link {
   color: #182126;
+  text-decoration: none;
 }
 
 a:visited {
   color: #6A252D;
+  text-decoration: none;
 }
 
 a:hover {
   color: #0F6B5A;
+  text-decoration: none;
 }
 
 a:active {
   color: #0F6B5A;
+  text-decoration: none;
+}
+
+/*card styling*/
+
+.card {
+  border-color: #E6ECEF;
 }
 
 .card-header {
   background-color: #B4C6D0;
+}
+
+.card-footer {
+  background-color: #F3F6F7;
 }
