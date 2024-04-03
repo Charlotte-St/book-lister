@@ -80,6 +80,8 @@ MIT
 
 [fuzzysort](https://www.npmjs.com/package/fuzzysort)
 
+Front page image derrived from [Roman Eisele](https://commons.wikimedia.org/wiki/File:Part_of_a_bookshelf_containing_books_by_ancient_philosophers_(1.1).jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons
+
 ### Tutorials 
 
 [CSV Parsing Tutorial](https://www.youtube.com/watch?v=9_x-UIVlxgo)

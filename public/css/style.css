@@ -25,3 +25,37 @@ a:active{
 #listEdit{
   margin-top: 20px;
 }
+
+.navbar{
+  background-color: #7F9EAF;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #17A088;
+  border-color: #7F9EAF;
+}
+
+.btn-primary:hover{
+  background-color: #476271;
+}
+
+a:link {
+  color: #182126;
+}
+
+a:visited {
+  color: #6A252D;
+}
+
+a:hover {
+  color: #0F6B5A;
+}
+
+a:active {
+  color: #0F6B5A;
+}
+
+.card-header {
+  background-color: #B4C6D0;
+}
