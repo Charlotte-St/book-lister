@@ -9,24 +9,6 @@ const list_item_id = document.querySelector('#book-card-id').getAttribute('list-
 const listId = window.location.toString().split('/')[window.location.toString().split('/').length-1].replace('?', '');
 
 
-const delBookHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-    const response = await fetch(`/api/listitem/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.reload();
-    } else {
-      alert('Failed to remove this book');
-    }
-  }
-};
-
-
-
-
 const listOwnerBtnHandler = () => {
     if (session_user_id == owner_user_id){
 
@@ -51,8 +33,6 @@ const listOwnerBtnHandler = () => {
 
         const cards = document.querySelectorAll('#delete-footer');
 
-        console.log(cards);
-
         for (let i = 0; i < cards.length; i++){
           const del_item_id = cards[i].getAttribute('list-item-id');
           const cardFooterEl = document.createElement('div');
@@ -60,21 +40,19 @@ const listOwnerBtnHandler = () => {
 
           const cardFooterBtnEl = document.createElement('button');
           cardFooterBtnEl.classList.add('btn', 'btn-primary', 'del-book');
+          cardFooterBtnEl.setAttribute('id', 'del-book');
           cardFooterBtnEl.setAttribute('data-id', `${del_item_id}`);
           cardFooterBtnEl.innerText = 'Delete';
 
           cards[i].appendChild(cardFooterEl);
           cardFooterEl.append(cardFooterBtnEl);
-
-          document.querySelector('.del-book').addEventListener('click', delBookHandler);
-
   }
 
     
-   scriptEl.innerHTML = ` 
+   /*scriptEl.innerHTML = ` 
         <script src="../js/deleteList.js"></script>
         <script src="../js/deleteBook.js"></script>
-    `;
+    `;*/
 
     } else {
         updateBtnEl.innerHTML= '';
@@ -84,9 +62,12 @@ const listOwnerBtnHandler = () => {
 listOwnerBtnHandler();
 
 
-/*const delBookHandler = async (event) => {
+const delBookHandler = async (event) => {
+  console.log('running del book handler')
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
+
+      console.log(id);
       const response = await fetch(`/api/listitem/${id}`, {
         method: 'DELETE',
       });
@@ -97,10 +78,11 @@ listOwnerBtnHandler();
         alert('Failed to remove this book');
       }
     }
-  };*/
+  };
   
+[...document.querySelectorAll('.del-book')].forEach(function(btn){ btn.addEventListener('click', delBookHandler)});
 
-    //document.querySelector('.del-book').addEventListener('click', delBookHandler);
+//document.querySelectorAll('.del-book').addEventListener('click', /*delBookHandler*/ function(){console.log('Button clicked')});
 
   const delListHandler = async (event) => {
       if (event.target.hasAttribute('data-id')) {
