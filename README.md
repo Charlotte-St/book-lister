@@ -92,6 +92,8 @@ Color Palette by [Coolors](https://coolors.co)
 
 [Import CSV data into PostgreSQL using Node.js](https://www.bezkoder.com/node-js-csv-postgresql/)
 
+[Want to add "addEventListener" on multiple elements with same class](https://stackoverflow.com/questions/51573435/want-to-add-addeventlistener-on-multiple-elements-with-same-class)
+
 ### Book Data
 
 [Open Library](https://openlibrary.org/)
