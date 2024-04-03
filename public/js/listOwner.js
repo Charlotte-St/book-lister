@@ -9,28 +9,23 @@ const list_item_id = document.querySelector('#book-card-id').getAttribute('list-
 const listId = window.location.toString().split('/')[window.location.toString().split('/').length-1].replace('?', '');
 
 
-console.log(session_user_id);
+const delBookHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+    const response = await fetch(`/api/listitem/${id}`, {
+      method: 'DELETE',
+    });
 
-/*const delBookBtnHandler = () => {
-
-  const cards = document.querySelectorAll('#book-card-id');
-  const count = cards.length;
-
-  for (let i = 0; i < count.length; i++){
-    const cardFooterEl = document.createElement('div');
-    cardFooterEl.classList.add('card-footer');
-
-    const cardFooterBtnEl = document.createElement('button');
-    cardFooterBtnEl.classList.add('btn', 'btn-primary', 'del-book');
-    cardFooterBtnEl.setAttribute('data-id', `${list_item_id}`);
-    cardFooterBtnEl.innerText = 'Delete';
-
-    deleteFooterEl.append(cardFooterEl);
-    cardFooterEl.append(cardFooterBtnEl);
-
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert('Failed to remove this book');
+    }
   }
+};
 
-}*/
+
+
 
 const listOwnerBtnHandler = () => {
     if (session_user_id == owner_user_id){
@@ -54,42 +49,32 @@ const listOwnerBtnHandler = () => {
 
         updateControlEl.append(deleteListBtnEl);
 
-        const cards = document.querySelectorAll('.card');
-        const count = cards.length;
+        const cards = document.querySelectorAll('#delete-footer');
 
-        console.log(count)
+        console.log(cards);
 
-        for (let i = 0; i < count.length; i++){
+        for (let i = 0; i < cards.length; i++){
+          const del_item_id = cards[i].getAttribute('list-item-id');
           const cardFooterEl = document.createElement('div');
           cardFooterEl.classList.add('card-footer');
 
           const cardFooterBtnEl = document.createElement('button');
           cardFooterBtnEl.classList.add('btn', 'btn-primary', 'del-book');
-          cardFooterBtnEl.setAttribute('data-id', `${list_item_id}`);
+          cardFooterBtnEl.setAttribute('data-id', `${del_item_id}`);
           cardFooterBtnEl.innerText = 'Delete';
 
-          deleteFooterEl.append(cardFooterEl);
+          cards[i].appendChild(cardFooterEl);
           cardFooterEl.append(cardFooterBtnEl);
 
+          document.querySelector('.del-book').addEventListener('click', delBookHandler);
+
   }
-
-       /* const cardFooterEl = document.createElement('div');
-        cardFooterEl.classList.add('card-footer');
-
-        const cardFooterBtnEl = document.createElement('button');
-        cardFooterBtnEl.classList.add('btn', 'btn-primary', 'del-book');
-        cardFooterBtnEl.setAttribute('data-id', `${list_item_id}`);
-        cardFooterBtnEl.innerText = 'Delete';
-
-        deleteFooterEl.append(cardFooterEl);
-        cardFooterEl.append(cardFooterBtnEl);*/
 
     
    scriptEl.innerHTML = ` 
         <script src="../js/deleteList.js"></script>
         <script src="../js/deleteBook.js"></script>
     `;
-    //delBookBtnHandler();
 
     } else {
         updateBtnEl.innerHTML= '';
@@ -99,7 +84,7 @@ const listOwnerBtnHandler = () => {
 listOwnerBtnHandler();
 
 
-const delBookHandler = async (event) => {
+/*const delBookHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
       const response = await fetch(`/api/listitem/${id}`, {
@@ -112,10 +97,10 @@ const delBookHandler = async (event) => {
         alert('Failed to remove this book');
       }
     }
-  };
+  };*/
   
 
-    document.querySelector('.del-book').addEventListener('click', delBookHandler);
+    //document.querySelector('.del-book').addEventListener('click', delBookHandler);
 
   const delListHandler = async (event) => {
       if (event.target.hasAttribute('data-id')) {
