@@ -48,12 +48,6 @@ const listOwnerBtnHandler = () => {
           cardFooterEl.append(cardFooterBtnEl);
   }
 
-    
-   /*scriptEl.innerHTML = ` 
-        <script src="../js/deleteList.js"></script>
-        <script src="../js/deleteBook.js"></script>
-    `;*/
-
     } else {
         updateBtnEl.innerHTML= '';
     }
@@ -81,8 +75,6 @@ const delBookHandler = async (event) => {
   };
   
 [...document.querySelectorAll('.del-book')].forEach(function(btn){ btn.addEventListener('click', delBookHandler)});
-
-//document.querySelectorAll('.del-book').addEventListener('click', /*delBookHandler*/ function(){console.log('Button clicked')});
 
   const delListHandler = async (event) => {
       if (event.target.hasAttribute('data-id')) {
