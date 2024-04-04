@@ -9,7 +9,7 @@
 
 ## Description
 
-Book Lister presents a new way to create and share lists of books. Users can assemble lists of books using the app, then share the lists they create. 
+Book Lister presents a new way to create and share lists of books. Users can assemble lists of books using the app, then share the lists they create. Clicking on a book in a list takes the user to more information about that book and a list of other lists that book is on. By gathering the list and the book information together, Book Lister provides a more user friendly way for users to share their book lists and explore the lists of others. 
 
 ## Table of Contents
 
@@ -56,7 +56,7 @@ No installation is required as the app is hosted on Render.
 
 ### Editing a List
 
-![Animated gif demonstrating the process of editing a list](/assets/images/editList.gif)
+![Animated gif demonstrating the process of editing a list](/assets/images/editList2.gif)
 
 1. Got to the list page for the list you would like to edit. 
 2. Click the 'Edit List' button for the list. 
@@ -89,15 +89,22 @@ No installation is required as the app is hosted on Render.
 
 ### Removing a Book from a List
 
-1. Click on the 'Remove' button under the book you would like to remove from the list. 
+![Animated gif demonstrating how to remove a book from a list](/assets/images/deleteBook.gif)
+
+1. Click on the 'Delete' button under the book you would like to remove from the list. 
 2. The book will be removed. 
 
 ### Viewing Book Data
-1. From the list page, you can click on any book added to the list to get more data about that book. 
+
+![Animated gif demonstrating how to view book data](/assets/images/viewBookData.gif)
+
+From the list page, you can click on any book added to the list to get more data about that book. The book data page will also show a list of all lists that book appears on. 
 
 ### Logging Out
 
-1. If you are logged in, you can logout by clicking the 'Logout' link in the top navigation bar.
+![Animated gif demonstrating how to logout](/assets/images/logout.gif)
+
+If you are logged in, you can logout by clicking the 'Logout' link in the top navigation bar.
 
 ## Testing
 
