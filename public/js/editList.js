@@ -7,6 +7,8 @@ const editListFormHandler = async (event) => {
 
 
     if (title && listDesc) {
+      console.log(listDesc);
+
       const response = await fetch(`/api/list/edit/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, listDesc }),

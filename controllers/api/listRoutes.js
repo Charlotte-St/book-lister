@@ -33,7 +33,7 @@ router.put('/edit/:id', withAuth, async (req, res) => {
   try {
       const list = await List.update({
           title: req.body.title,
-          list_desc: req.body.list_desc},
+          listDesc: req.body.listDesc},
           {where: {
             id: req.params.id,
             user_id: req.session.user_id
