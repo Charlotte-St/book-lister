@@ -1,5 +1,3 @@
-console.log('running listowner.js')
-
 const updateBtnEl = document.querySelector('#owner-buttons');
 const deleteFooterEl = document.querySelector('#delete-footer');
 const scriptEl = document.querySelector('#script-div');
@@ -7,9 +5,6 @@ const scriptEl = document.querySelector('#script-div');
 const session_user_id = document.querySelector('#list-card').getAttribute('list-user');
 const owner_user_id = document.querySelector('#list-card').getAttribute('list-owner');
 //const list_item_id = document.querySelector('#book-card-id').getAttribute('list-item-id');
-
-console.log(session_user_id);
-console.log(owner_user_id);
 
 const listId = window.location.toString().split('/')[window.location.toString().split('/').length-1].replace('?', '');
 
@@ -22,10 +17,10 @@ const listOwnerBtnHandler = () => {
 
         updateBtnEl.innerHTML = `<div type="card-body" id="update-controls">
         <a href="/addbook/${listId}">
-            <button class="btn btn-primary">Add a book</button>
+            <button class="btn btn-primary">Add a Book</button>
         </a>
         <a href="/edit/${listId}">
-            <button class="btn btn-primary">Edit list</button>
+            <button class="btn btn-primary">Edit List</button>
         </a>
         </div>`;
 
