@@ -2,14 +2,14 @@ const editListFormHandler = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#list-title').value.trim();
-    const list_desc = document.querySelector('#list-descr').value.trim();
+    const listDesc = document.querySelector('#list-descr').value.trim();
     const id = window.location.toString().split('/')[window.location.toString().split('/').length-1];
 
 
-    if (title && list_desc) {
+    if (title && listDesc) {
       const response = await fetch(`/api/list/edit/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({ title, list_desc }),
+        body: JSON.stringify({ title, listDesc }),
         headers: {
           'Content-Type': 'application/json',
         },

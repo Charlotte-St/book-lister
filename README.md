@@ -2,12 +2,14 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
->[Book Lister](https://project-2-2nvv.onrender.com/)
+## [Book Lister](https://project-2-2nvv.onrender.com/)
+
+
 >[Project Kanban](https://github.com/users/Charlotte-St/projects/3)
 
 ## Description
 
-Book Lister presents a new way to build lists of books. Users can assemble their list and share with others. 
+Book Lister presents a new way to create and share lists of books. Users can assemble lists of books using the app, then share the lists they create. 
 
 ## Table of Contents
 
@@ -16,8 +18,11 @@ Book Lister presents a new way to build lists of books. Users can assemble their
 - [Usage](#usage)
     - [Signing Up/Logging In](#signing-uplogging-in)
     - [Creating a List](#creating-a-list)
+    - [Editing a List](#editing-a-list)
+    - [Deleting a List](#deleting-a-list)
     - [Viewing Your Lists](#viewing-your-lists)
-    - [Adding and Removing Books from a List](#adding-and-removing-books-from-a-list)
+    - [Adding a Book to a List](#adding-a-book-to-a-list)
+    - [Removing a Book from a list](#removing-a-book-from-a-list)
     - [Viewing Book Data](#viewing-book-data)
 - [Testing](#testing)
 - [License](#license)
@@ -28,19 +33,71 @@ Book Lister presents a new way to build lists of books. Users can assemble their
 
 ## Installation
 
-No installation is required as the is hosted on Render.
+No installation is required as the app is hosted on Render.
 
 ## Usage
 
 ## Signing Up/Logging In
 
+![Animated gif demonstrating the login process](/assets/images/login.gif)
+
+1. Click on the 'Login' link in the upper right corner of the page. 
+2. Select the appropriate option. If you have an existing account, you can use the login form to access the site. If you need to sign up for the site, you can use the sign up form. 
+3. Click submit and your login or sign up will be processed. 
+
 ### Creating a List
+
+![Animated gif demonstrating the process to add a list](/assets/images/addList.gif)
+
+1. Click the 'Add A List' option in the navigation bar at the top of the page. 
+2. Enter a title for your list. 
+3. Enter a description for your list. 
+4. Click the Add List button to save your list. 
+
+### Editing a List
+
+![Animated gif demonstrating the process of editing a list](/assets/images/editList.gif)
+
+1. Got to the list page for the list you would like to edit. 
+2. Click the 'Edit List' button for the list. 
+3. Update the title and description for the list. 
+4. Click the 'Update List' button to save your edits. 
+
+### Deleting a List
+
+![Animated gif demonstrating the process of deleting a list](/assets/images/deleteList.gif)
+
+1. Go to the list page for the list you would like to delete. 
+2. Click the 'Delete List' button for the list. Note: Lists cannot be retrieved after deletion. 
 
 ### Viewing Your Lists
 
-### Adding and Removing Books from a List
+![Animated gif demonstrating how to view lists belonging to the user](/assets/images/viewList.gif)
+
+1. Go to the 'Profile' link at in the navigation bar at the top of the page. 
+2. Your lists will be displayed on your profile page. If no lists appear, there are no lists associated with your account.
+3. To view an individual list, click on the list.  
+
+### Adding a Book to a List
+
+![Animated gif demonstrating how to add a book to a list](/assets/images/addBook.gif)
+
+1. Click the 'Add Book' button at the top of the list.
+2. Use the search box to search for books. Users can search for books on their title, author's name, or genre. When you are ready to submit your search, click the Search button. 
+3. A list of books will appear below the search box. You can click on the title of the books in the search results to get more information about the book. 
+4. Click the 'Add Book' button next to the book you would like to add. 
+
+### Removing a Book from a List
+
+1. Click on the 'Remove' button under the book you would like to remove from the list. 
+2. The book will be removed. 
 
 ### Viewing Book Data
+1. From the list page, you can click on any book added to the list to get more data about that book. 
+
+### Logging Out
+
+1. If you are logged in, you can logout by clicking the 'Logout' link in the top navigation bar.
 
 ## Testing
 
