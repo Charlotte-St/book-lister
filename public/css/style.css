@@ -7,7 +7,7 @@ body {
 /*nav bar styling*/
 
 .navbar{
-  background-color: #7F9EAF;
+  background-color: #4a819f;
   color: white;
 }
 
@@ -37,10 +37,6 @@ body {
   background-color: #17A088;
 }
 
-.btn-primary:hover{
-  background-color: #476271;
-}
-
 a:link {
   color: #182126;
   text-decoration: none;
@@ -58,6 +54,11 @@ a:hover {
 
 a:active {
   color: #0F6B5A;
+  text-decoration: none;
+}
+
+.btn-primary a:link, a:visited, a:active{
+  color: white;
   text-decoration: none;
 }
 
