@@ -59,7 +59,7 @@ listOwnerBtnHandler();
 
 
 const delBookHandler = async (event) => {
-  console.log('running del book handler')
+
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
 

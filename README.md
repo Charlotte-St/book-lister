@@ -9,7 +9,7 @@
 
 ## Description
 
-Book Lister presents a new way to create and share lists of books. Users can assemble lists of books using the app, then share the lists they create. Clicking on a book in a list takes the user to more information about that book and a list of other lists that book is on. By gathering the list and the book information together, Book Lister provides a more user friendly way for users to share their book lists and explore the lists of others. 
+Book Lister provides a new way to create and share lists of books. Users can assemble lists of books using the app, then share the lists they create. Clicking on a book in a list takes the user to more information about that book and a list of other lists that book is on. By gathering the list and the book information together, Book Lister provides a more user friendly way for users to share their book lists and explore lists by other users. 
 
 ## Table of Contents
 
@@ -112,7 +112,7 @@ N/A
 
 ## License
 
-MIT
+[The MIT License](https://opensource.org/license/MIT)
 
 ## Credits
 
@@ -125,6 +125,8 @@ MIT
 [PostgreSQL](https://www.postgresql.org/)
 
 [Sequelize](https://sequelize.org/)
+
+[connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 
 [pg](https://www.npmjs.com/package/pg)
 
